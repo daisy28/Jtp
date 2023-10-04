@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  width: 300px;
+  border: 2px solid goldenrod;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 2rem auto;
+}
+
+.user_img {
+  width: 260px;
+  height: 260px;
+  margin: 0.5rem auto;
+  object-fit: cover;
+}
+
+.name,
+.occupation {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: goldenrod;
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.testimony {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.btn_div {
+  width: 100px;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.previous_btn,
+.next_btn {
+  color: crimson;
+  font-weight: 900;
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.random_btn_div {
+  width: 50%;
+  margin: 0.5rem auto;
+}
+
+.random_btn {
+  border: 2px solid goldenrod;
+  background-color: transparent;
+  padding: 0.5rem;
+  text-align: center;
+  word-spacing: 0.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-size: 0.6rem;
+}
