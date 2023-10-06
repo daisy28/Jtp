@@ -1,0 +1,46 @@
+* {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+     list-style: none;
+     text-decoration: none;
+}
+
+.nav {
+     background-color: rgb(202, 215, 225);
+     padding: 1rem;
+     display: flex;
+     justify-content: space-between;
+}
+
+.links {
+     display: none;
+}
+
+.links a {
+     margin-bottom: .5rem;
+}
+
+.show_nav {
+     display: flex;
+     flex-direction: column;
+}
+
+.toggle {
+     font-size: 2.5rem;
+     margin-left: auto;
+     cursor: pointer;
+     color: rgb(16, 75, 119);
+}
+
+.exit {
+     display: none;
+}
+
+.show_exit {
+     display: block;
+}
+
+.close_default {
+     display: none;
+}

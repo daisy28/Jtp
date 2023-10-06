@@ -62,7 +62,7 @@ sliderBtns.forEach(buttons => {
                cardCount === users.length - 1 ? cardCount = 0 : cardCount++;
                uiDesign(cardCount);
           } else if (buttons.classList.contains("previous_btn")) {
-               cardCount === 0 ? 
+               cardCount === 0 ?
                     cardCount = users.length - 1 : cardCount--;
                uiDesign(cardCount);
           } else {
@@ -70,4 +70,4 @@ sliderBtns.forEach(buttons => {
                uiDesign(randomIndex);
           }
      });
-})
+});
