@@ -21,11 +21,6 @@
      margin-bottom: .5rem;
 }
 
-.show_nav {
-     display: flex;
-     flex-direction: column;
-}
-
 .toggle {
      font-size: 2.5rem;
      margin-left: auto;
@@ -37,10 +32,15 @@
      display: none;
 }
 
-.show_exit {
+.show_links .exit {
      display: block;
 }
 
-.close_default {
+.show_links .default {
      display: none;
+}
+
+.show_links .links{
+     display: flex;
+     flex-direction: column;
 }
