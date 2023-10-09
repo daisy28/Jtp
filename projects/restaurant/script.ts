@@ -180,16 +180,16 @@ const menuUI = (menu: Menu[]) => {
   menu.map(item => {
     return (html += `
      <div id=${item.id}>
-                         <img src="${item.img} "alt="">
-                         <div class="menu_name">
-                              <p class="menu_title">${item.title}</p>
-                              <p class="menu_price">${item.price}</p>
-                         </div>
-                         <div class="menu_description">
-                              <p>${item.description}</p>
-                         </div>
-                    </div>
-     `);
+      <img src="${item.img} "alt="">
+      <div class="menu_name">
+            <p class="menu_title">${item.title}</p>
+            <p class="menu_price">${item.price}</p>
+      </div>
+      <div class="menu_description">
+            <p>${item.description}</p>
+      </div>
+    </div>
+    `);
   });
   menuContainer.innerHTML = html;
 };
@@ -210,10 +210,9 @@ const displayCategory = () => {
     
   categories.map((category) => {
     menuCategoriesContainer.innerHTML += `
-          <div class="category" id=${category}>
-          ${category}
-          </div>
-          `;
+      <div class="category" id=${category}>
+      ${category}
+      </div>`;
   });
   const categoryBtn = menuCategoriesContainer.querySelectorAll(".category");
   categoryBtn.forEach((btns) => {

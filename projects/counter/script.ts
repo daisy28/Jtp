@@ -1,7 +1,7 @@
-const counterBtn = document.querySelectorAll(".btn");
-const counter: Element = document.querySelector("#number")!;
-const saveCount: Element = document.querySelector("#save_count")!;
-const totalCount: Element = document.querySelector("#total_count")!;
+const counterBtn: NodeListOf<Element> = document.querySelectorAll(".btn");
+const counter: HTMLElement = document.querySelector("#number")!;
+const saveCount: HTMLElement = document.querySelector("#save_count")!;
+const totalCount: HTMLElement = document.querySelector("#total_count")!;
 let count = 0;
 let total = 0;
 

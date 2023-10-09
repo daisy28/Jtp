@@ -43,31 +43,30 @@ const cardContainer: Element = document.querySelector(".container")!;
 let cardCount = 0;
 
 const uiDesign = (count: number) => {
-     const index = users[count];
-     userImg.setAttribute("src", `${index.img}`);
-     userName.innerHTML = index.name;
-     userOccupation.innerHTML = index.occupation;
-     userTestimony.innerHTML = index.testimonial;
-}
+  const index = users[count];
+  userImg.setAttribute("src", `${index.img}`);
+  userName.innerHTML = index.name;
+  userOccupation.innerHTML = index.occupation;
+  userTestimony.innerHTML = index.testimonial;
+};
 
 window.addEventListener("DOMContentLoaded", () => {
-     uiDesign(cardCount);
+  uiDesign(cardCount);
 });
 
 const sliderBtns = document.querySelectorAll(".btn");
 
-sliderBtns.forEach(buttons => {
-     buttons.addEventListener("click", () => {
-          if (buttons.classList.contains("next_btn")) {
-               cardCount === users.length - 1 ? cardCount = 0 : cardCount++;
-               uiDesign(cardCount);
-          } else if (buttons.classList.contains("previous_btn")) {
-               cardCount === 0 ?
-                    cardCount = users.length - 1 : cardCount--;
-               uiDesign(cardCount);
-          } else {
-               const randomIndex = Math.floor(Math.random() * users.length);
-               uiDesign(randomIndex);
-          }
-     });
+sliderBtns.forEach((buttons) => {
+  buttons.addEventListener("click", () => {
+    if (buttons.classList.contains("next_btn")) {
+      cardCount === users.length - 1 ? (cardCount = 0) : cardCount++;
+      uiDesign(cardCount);
+    } else if (buttons.classList.contains("previous_btn")) {
+      cardCount === 0 ? (cardCount = users.length - 1) : cardCount--;
+      uiDesign(cardCount);
+    } else {
+      const randomIndex = Math.floor(Math.random() * users.length);
+      uiDesign(randomIndex);
+    }
+  });
 });

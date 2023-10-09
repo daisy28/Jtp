@@ -48,15 +48,14 @@ window.addEventListener("DOMContentLoaded", () => {
     uiDesign(cardCount);
 });
 const sliderBtns = document.querySelectorAll(".btn");
-sliderBtns.forEach(buttons => {
+sliderBtns.forEach((buttons) => {
     buttons.addEventListener("click", () => {
         if (buttons.classList.contains("next_btn")) {
-            cardCount === users.length - 1 ? cardCount = 0 : cardCount++;
+            cardCount === users.length - 1 ? (cardCount = 0) : cardCount++;
             uiDesign(cardCount);
         }
         else if (buttons.classList.contains("previous_btn")) {
-            cardCount === 0 ?
-                cardCount = users.length - 1 : cardCount--;
+            cardCount === 0 ? (cardCount = users.length - 1) : cardCount--;
             uiDesign(cardCount);
         }
         else {
