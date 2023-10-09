@@ -22,17 +22,19 @@ const getRandomHexColors = () => {
   return Math.floor(Math.random() * hexColor.length);
 };
 
+
 btns.forEach((btn) => {
   btn.addEventListener("click", () => {
     if (btn.classList.contains("color_btn")) {
-      colorCode.innerHTML = colors[getRandomColors()];
-      window.document.body.style.backgroundColor = colors[getRandomColors()];
+    colorCode.innerHTML = `${colors[getRandomColors()]}`;
+      document.body.style.backgroundColor = `${colors[getRandomColors()]}`;
+      console.log(getRandomColors(), colors[getRandomColors()])
     } else {
       let hexCode = "#";
       for (let i = 0; i < 6; i++) {
         hexCode += hexColor[getRandomHexColors()];
         colorCode.innerHTML = hexCode;
-        window.document.body.style.backgroundColor = hexCode;
+        document.body.style.backgroundColor = hexCode;
       }
     }
   });
