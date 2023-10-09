@@ -50,7 +50,7 @@ const uiDesign = (count: number) => {
      userTestimony.innerHTML = index.testimonial;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
      uiDesign(cardCount);
 });
 

@@ -44,7 +44,7 @@ const uiDesign = (count) => {
     userOccupation.innerHTML = index.occupation;
     userTestimony.innerHTML = index.testimonial;
 };
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
     uiDesign(cardCount);
 });
 const sliderBtns = document.querySelectorAll(".btn");
