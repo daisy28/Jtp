@@ -84,7 +84,7 @@ const menus: Menu[] = [
     id: "10",
     category: "Breakfast",
     img: "../assets/images (4).jpeg",
-    title: "Blueberry Pancakes & Orange Juice",
+    title: "Berry Pancakes",
     price: "$40",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi nisi assumenda quis nihil. Suscipit soluta cum rerum officia consequatur voluptatibus minus. Eum exercitationem sunt rem. Doloribus ullam amet officiis dolorem!",
@@ -111,7 +111,7 @@ const menus: Menu[] = [
     id: "13",
     category: "Dinner",
     img: "../assets/images (7).jpeg",
-    title: "Green Peas & Baked Steak",
+    title: "Green Peas & Steak",
     price: "$35",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi nisi assumenda quis nihil. Suscipit soluta cum rerum officia consequatur voluptatibus minus. Eum exercitationem sunt rem. Doloribus ullam amet officiis dolorem!",
@@ -129,7 +129,7 @@ const menus: Menu[] = [
     id: "15",
     category: "Dinner",
     img: "../assets/images (9).jpeg",
-    title: "Spinach Potato Porridge",
+    title: "Potato Porridge",
     price: "$15",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi nisi assumenda quis nihil. Suscipit soluta cum rerum officia consequatur voluptatibus minus. Eum exercitationem sunt rem. Doloribus ullam amet officiis dolorem!",
