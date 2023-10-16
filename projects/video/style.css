@@ -8,98 +8,79 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-body {
-  padding: 1rem;
+.video_heading {
+  position: absolute;
+  z-index: 1;
+  background-color: #333333a6;
+  height: 100vh;
+  left: 0;
+  right: 0;
 }
 
-.header {
-  margin: 2rem 0;
+.video_heading h1{
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.heading {
-  text-align: center;
-  color: rgb(11, 11, 11);
+.video_section {
+  position: relative;
+  height: 100vh;
 }
 
-.heading_border {
-  width: 60px;
-  height: 4px;
-  border-radius: 4px;
-  background-color: goldenrod;
-  display: block;
-  margin: 0.7rem auto;
-}
-
-.categories_container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 3rem;
-  gap: 1rem;
-}
-
-.category {
-  padding: 0.5rem;
-  border: 2px solid goldenrod;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
-}
-
-.category:hover {
-  background-color: rgba(204, 179, 116, 0.72);
-}
-
-.menu_container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  margin-bottom: 5rem;
-}
-
-img {
+.video {
   width: 100%;
-  height: 300px;
-  border: 2px solid goldenrod;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -5;
+  height: 100vh;
   object-fit: cover;
-  border-radius: 8px;
 }
 
-.menu_name {
+.video_toggle {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  z-index: 50;
+  width: 140px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid goldenrod;
-  padding: 0.5rem 0;
-  margin-bottom: 1rem;
+  background-color: #e3dcdc;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  border: none;
 }
 
-.menu_title {
+span {
+  width: 40px;
+  color: rgb(6, 83, 150);
+  font-size: 1.2rem;
   font-weight: 600;
-  letter-spacing: 0.3rem;
 }
 
-.menu_price {
-  font-weight: 600;
-  letter-spacing: 0.3rem;
-  color: goldenrod;
+.slider {
+  position: absolute;
+  background-color: rgb(6, 83, 150);
+  left: 0%;
+  width: 50%;
+  height: 100%;
+  border-radius: 8px;
+  transition: all;
+  transition-delay: .5s;
+  transition-duration: .5s;
 }
 
-.menu_description {
-  color: rgb(71, 64, 64);
-}
-
-@media screen and (min-width: 768px) {
-  .menu_container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 680px;
-    margin: auto;
-    margin-bottom: 5rem;
-  }
-
-  .categories_container {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 680px;
-    margin: 2.5rem auto;
-  }
+.slide {
+  left: 50%;
+  transition: all;
+  transition-delay: .5s;
+  transition-duration: .5s;
 }

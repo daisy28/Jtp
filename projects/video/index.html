@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Project</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-     <meta charset="UTF-8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <title>Restaurant</title>
-     <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <main>
+      <div class="video_heading">
+        <h1>Video Project</h1>
+      </div>
+      <section class="video_section">
+        <video loop muted autoplay class="video">
+          <source
+            src="../assets/Passenger - Hearts On Fire (Live, Busking in Dublin).mp4"
+            type="video/mp4"
+          />
+        </video>
 
-<body>
-     <main>
-          <div class="header">
-               <h1 class="heading">Our Menu</h1>
-               <div class="heading_border"></div>
-          </div>
-
-          <section>
-               <div class="categories_container"></div>
-               <div class="menu_container"></div>
-          </section>
-     </main>
-     <script src="script.js"></script>
-</body>
-
+        <button class="video_toggle">
+          <span>Play</span>
+          <span>Pause</span>
+          <span class="slider"></span>
+        </button>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
