@@ -4,32 +4,70 @@
      padding: 0;
      list-style: none;
      text-decoration: none;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .nav {
-     background-color: rgb(202, 215, 225);
-     padding: 1rem;
+     background-color: rgba(34, 124, 192, 0.956);
+     padding: 1.5rem;
      display: flex;
      justify-content: space-between;
+     position: fixed;
+     left: 0;
+     right: 0;
+     top: 0;
+     z-index: 7;
+     transition: all;
+     transition-timing-function: ease-in-out;
+     transition-delay: .1s;
+     transition-duration: .5s;
 }
 
 .links {
      display: none;
+     transition: all;
+     transition-timing-function: ease-in-out;
+     transition-delay: .6s;
+     transition-duration: .5s;
 }
 
 .links a {
-     margin-bottom: .5rem;
+     margin-bottom: .7rem;
+     font-size: 1.2rem;
+     color: #e7d1d1;
+}
+
+.links a:hover {
+     color: rgb(6, 49, 81);
+     transition: all;
+     transition-duration: .6s;
+     transition-delay: .3s;
 }
 
 .toggle {
      font-size: 2.5rem;
      margin-left: auto;
      cursor: pointer;
-     color: rgb(16, 75, 119);
+     color: rgb(6, 49, 81);
 }
 
 .exit {
      display: none;
+     font-size: 1.9rem;
+}
+
+.exit:hover {
+     border: 2px solid #e7d1d1;
+     border-radius: 40%;
+     font-size: 1.4rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: .3rem;
+     transition: all;
+     transition-timing-function: ease-in-out;
+     transition-delay: .1s;
+     transition-duration: .5s;
 }
 
 .show_links .exit {
@@ -43,4 +81,27 @@
 .show_links .links{
      display: flex;
      flex-direction: column;
+     transition: all;
+     transition-timing-function: ease-in-out;
+     transition-delay: .6s;
+     transition-duration: .5s;
+}
+
+main {
+     padding: 2rem 1rem;
+     position: relative;
+     top: 80px;
+}
+
+@media screen and (min-width:768px) {
+     .toggle{
+          display: none;
+     }
+
+     .links{
+          display: flex;
+          justify-content: center;
+          gap: 1.3rem;
+          width: 100%;
+     }
 }
