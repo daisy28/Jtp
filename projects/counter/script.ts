@@ -13,7 +13,7 @@ counterBtn.forEach((btns) => {
       counter.innerHTML = `${count}`;
     } else if (btns.id.includes("btn_decrement")) {
       count--;
-      counter.style.color = "crimson";
+      count < 0 ? counter.style.color = "crimson" : counter.style.color = "green";
       counter.innerHTML = `${count}`;
     } else if (btns.id.includes("btn_reset")) {
       count = 0;
@@ -29,7 +29,7 @@ counterBtn.forEach((btns) => {
       saveCount.style.color = `goldenrod`;
       count < 0
         ? (saveCount.textContent += `(${count}) - `)
-        : (saveCount.textContent += `${count} - `);
+        : (saveCount.textContent += ` ${count} - `);
       total < 0
         ? (totalCount.style.color = `red`)
         : (totalCount.style.color = `blue`);
