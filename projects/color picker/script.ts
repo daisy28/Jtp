@@ -26,15 +26,15 @@ const getRandomHexColors = () => {
 btns.forEach((btn) => {
   btn.addEventListener("click", () => {
     if (btn.classList.contains("color_btn")) {
-    colorCode.innerHTML = `${colors[getRandomColors()]}`;
-      document.body.style.backgroundColor = `${colors[getRandomColors()]}`;
-      console.log(getRandomColors(), colors[getRandomColors()])
+      const randomNum = getRandomColors();
+      colorCode.innerHTML = colors[randomNum];
+      document.body.style.backgroundColor = colors[randomNum];
     } else {
       let hexCode = "#";
       for (let i = 0; i < 6; i++) {
         hexCode += hexColor[getRandomHexColors()];
         colorCode.innerHTML = hexCode;
-        document.body.style.backgroundColor = hexCode;
+        document.body.style.backgroundColor = `${hexCode}`;
       }
     }
   });

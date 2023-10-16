@@ -11,6 +11,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  transition: all;
+  transition-duration: .6s;
+  transition-delay: .6s;
 }
 
 .container {
@@ -40,4 +43,7 @@ body {
   letter-spacing: 2px;
   text-transform: lowercase;
   font-size: 0.8rem;
+  transition: all;
+  transition-duration: .6s;
+  transition-delay: .6s;
 }
