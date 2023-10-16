@@ -47,12 +47,17 @@ body {
 
 .category:hover {
   background-color: rgba(204, 179, 116, 0.72);
+  transition: all;
+  transition-timing-function: ease-in-out;
+  transition-delay: .1s;
+  transition-duration: .5s;
+  color: goldenrod;
 }
 
 .menu_container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 4.5rem;
   margin-bottom: 5rem;
 }
 
@@ -101,5 +106,35 @@ img {
     grid-template-columns: repeat(3, 1fr);
     max-width: 680px;
     margin: 2.5rem auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  section {
+    padding: 1rem 2rem;
+  }
+
+  .menu_container{
+    gap: 2.5rem;
+    row-gap: 5rem;
+  }
+
+  .menu_container,
+  .categories_container {
+    max-width: 100%;
+  }
+  .menu_container .menu_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .menu_info img {
+    height: 250px;
+  }
+
+  .menu_name {
+    padding-top: 0;
   }
 }

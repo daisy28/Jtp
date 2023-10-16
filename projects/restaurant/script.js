@@ -152,15 +152,18 @@ const menuUI = (menu) => {
     let html = ``;
     menu.map(item => {
         return (html += `
-     <div id=${item.id}>
+     <div id=${item.id} class="menu_info">
       <img src="${item.img} "alt="">
-      <div class="menu_name">
-            <p class="menu_title">${item.title}</p>
-            <p class="menu_price">${item.price}</p>
+      <div>
+        <div class="menu_name">
+              <p class="menu_title">${item.title}</p>
+              <p class="menu_price">${item.price}</p>
+        </div>
+        <div class="menu_description">
+              <p>${item.description}</p>
+        </div>
       </div>
-      <div class="menu_description">
-            <p>${item.description}</p>
-      </div>
+      
     </div>
     `);
     });
@@ -191,10 +194,12 @@ const displayCategory = () => {
                 if (btns.id === menu.category) {
                     filteredCategory.push(menu);
                     menuUI(filteredCategory);
+                    // btns.style.backgroundColor = `rgba(204, 179, 116, 0.72)`;
                 }
             });
             if (btns.id === "all") {
                 menuUI(menus);
+                // btns.style.backgroundColor = `rgba(204, 179, 116, 0.72)`;
             }
         });
     });
