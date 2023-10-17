@@ -8,6 +8,25 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
+.preloader_div {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.hide_preloader {
+  display: none;
+}
+
+.preloader_div img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
 .video_heading {
   position: absolute;
   z-index: 1;
