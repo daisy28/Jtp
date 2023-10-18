@@ -29,6 +29,17 @@ header {
      padding: 1rem;
 }
 
+.fixed_nav {
+     position: fixed;
+     background-color: #fff;
+     box-shadow: 0px 0px 10px #a7a3a3;
+     right: 0;
+     top: 0;
+     left: 0;
+     z-index: 2;
+     margin-bottom: 4rem;
+}
+
 .nav_div {
      display: flex;
      justify-content: space-between;
@@ -101,6 +112,10 @@ header {
      line-height: 42px;
 }
 
+.fixed_nav .menu_links a {
+     color: #000;
+}
+
 .menu_links a:hover {
      color: aqua;
      transition: all;
@@ -147,7 +162,7 @@ header {
 .about,
 .services,
 .tours {
-     height: 300px;
+     height: 500px;
      background-color: rgba(224, 237, 237, 0.609);
 }
 
@@ -173,10 +188,14 @@ header {
 }
 
 .top_btn {
+     display: none;
+}
+
+.show_top_btn {
      background-color: aqua;
      position: fixed;
-     bottom: 20px;
-     right: 20px;
+     bottom: 30px;
+     right: 30px;
      width: 30px;
      height: 30px;
      border-radius: 8px;
@@ -206,4 +225,33 @@ header {
      text-align: center;
      line-height: 28px;
      height: 180px;
+}
+
+@media screen and (min-width:768px) {
+     .nav {
+          padding: 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+     }
+
+     .nav_div {
+          margin-bottom: 0;
+     }
+
+     .menu_toggle {
+          display: none;
+     }
+
+     .menu_links {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1.5rem;
+          flex-direction: row;
+     }
+
+     .header_info {
+          padding: 2rem;
+     }
 }
