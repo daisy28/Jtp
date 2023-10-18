@@ -1,257 +1,269 @@
 * {
-     box-sizing: border-box;
-     margin: 0;
-     padding: 0;
-     list-style: none;
-     text-decoration: none;
-     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 html {
-     scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 header {
-     background-image: url("../assets/images.jpeg");
-     background-color: #33333392;
-     background-blend-mode: multiply;
-     background-repeat: no-repeat;
-     background-size: cover;
-     position: relative;
-     top: -2px;
-     display: flex;
-     flex-direction: column;
-     gap: 4rem;
-     /* height: 400px; */
+  background-image: url("../assets/images.jpeg");
+  background-color: #33333392;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: -2px;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  /* height: 400px; */
 }
 
 .nav {
-     padding: 1rem;
+  padding: 1rem;
 }
 
 .fixed_nav {
-     position: fixed;
-     background-color: #fff;
-     box-shadow: 0px 0px 10px #a7a3a3;
-     right: 0;
-     top: 0;
-     left: 0;
-     z-index: 2;
-     margin-bottom: 4rem;
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px #a7a3a3;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  /* margin-bottom: 4rem; */
 }
 
 .nav_div {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .logo_div {
-     width: 50px;
-     height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
-.logo_div img{
-     width: 50px;
-     height: 50px;
+.logo_div img {
+  width: 50px;
+  height: 50px;
 }
 
 .menu_toggle {
-     width: 40px;
-     height: 40px;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .menu_toggle span {
-     width: 20px;
-     height: 2px;
-     border-radius: 4px;
-     background-color: #000;
-     margin-bottom: .2rem;
+  width: 20px;
+  height: 2px;
+  border-radius: 4px;
+  background-color: #000;
+  margin-bottom: 0.2rem;
 }
 
 .menu_toggle:hover span {
-     background-color: aqua;
-     border-radius: 50%;
-     transform: rotate(180deg);
-     transition: all;
-     transition-duration: .8s;
-     transition-delay: .2s;
+  background-color: aqua;
+  border-radius: 50%;
+  transform: rotate(180deg);
+  transition: all;
+  transition-duration: 0.8s;
+  transition-delay: 0.2s;
 }
 
 .menu_links {
-     display: none;
-     transition: all;
-     transition-duration: 1s;
-     transition-delay: .2s;
+  display: none;
+  transition: all;
+  transition-duration: 1s;
+  transition-delay: 0.2s;
 }
 
 .show_menu_links {
-     display: flex;
-     flex-direction: column;
-     align-items: start;
-     justify-content: start;
-     gap: 1.2rem;
-     padding: 1rem .5rem;
-     transition: all;
-     transition-duration: 2s;
-     transition-delay: .2s;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 1.2rem;
+  padding: 1rem 0.5rem;
+  transition: all;
+  transition-duration: 2s;
+  transition-delay: 0.2s;
 }
 
 .menu_links a {
-     color: #fff;
-     font-size: 1.4rem;
-     font-weight: 600;
-     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-     letter-spacing: .3rem;
-     line-height: 42px;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  letter-spacing: 0.3rem;
+  line-height: 42px;
 }
 
 .fixed_nav .menu_links a {
-     color: #000;
+  color: #000;
 }
 
 .menu_links a:hover {
-     color: aqua;
-     transition: all;
-     transition-duration: .7s;
-     transition-delay: .4s;
+  color: aqua;
+  transition: all;
+  transition-duration: 0.5s;
+  transition-delay: 0.2s;
 }
 
 .header_info {
-     padding: 1rem;
-     text-align: center;
-     margin-bottom: 6rem;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 6rem;
 }
 
 .header_info h1 {
-     text-transform: uppercase;
-     letter-spacing: .2rem;
-     font-size: 1.9rem;
-     font-weight: 700;
-     color: #fff;
-     line-height: 42px;
-     margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 42px;
+  margin-bottom: 1rem;
 }
 
 .header_info p {
-     letter-spacing: .2rem;
-     font-size: 1rem;
-     font-weight: 400;
-     color: #fff;
-     line-height: 24px;
-     margin-bottom: 2rem;
+  letter-spacing: 0.2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 24px;
+  margin-bottom: 2rem;
 }
 
 .header_info a {
-     letter-spacing: .3rem;
-     font-size: .9rem;
-     font-weight: 500;
-     color: #fff;
-     line-height: 28px;
-     padding: .6rem .8rem;
-     border: 2px solid #fff;
-     text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 28px;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid #fff;
+  text-transform: uppercase;
+}
+
+.header_info a:hover {
+  /* transform: scaleY(3deg); */
+  background-color: #ffffff15;
+  color: aqua;
+  transition: all;
+  transition-duration: 0.5s;
+  transition-delay: 0.2s;
 }
 
 .about,
 .services,
 .tours {
-     height: 500px;
-     background-color: rgba(224, 237, 237, 0.609);
+  height: 500px;
+  background-color: rgba(224, 237, 237, 0.609);
 }
 
 .about h1,
 .services h1,
 .tours h1 {
-     font-size: 1.8rem;
-     text-align: center;
-     line-height: 32px;
-     color: #000;
-     text-transform: uppercase;
-     letter-spacing: .2rem;
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 32px;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
 }
 
 .about span,
 .services span,
 .tours span {
-     color: aqua;
+  color: aqua;
 }
 
-.services{
-     background-color: #fff;
+.services {
+  background-color: #fff;
 }
 
 .top_btn {
-     display: none;
+  display: none;
 }
 
 .show_top_btn {
-     background-color: aqua;
-     position: fixed;
-     bottom: 30px;
-     right: 30px;
-     width: 30px;
-     height: 30px;
-     border-radius: 8px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
+  background-color: aqua;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* tran */
 }
 
 .top_btn p {
-     font-weight: 600;
-     font-size: 1.2rem;
-     color: #fff;
-     transform: rotate(90deg);
-     text-align: center;
-     padding-bottom: .2rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #fff;
+  transform: rotate(90deg);
+  text-align: center;
+  padding-bottom: 0.2rem;
 }
 
 .footer {
-     background-color: rgb(31, 59, 59);
-     padding: 1rem;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     color: #fff;
-     letter-spacing: .2rem;
-     text-transform: capitalize;
-     text-align: center;
-     line-height: 28px;
-     height: 180px;
+  background-color: rgb(31, 59, 59);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+  text-align: center;
+  line-height: 28px;
+  height: 180px;
 }
 
-@media screen and (min-width:768px) {
-     .nav {
-          padding: 2rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-     }
+@media screen and (min-width: 768px) {
+  .nav {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-     .nav_div {
-          margin-bottom: 0;
-     }
+  .nav_div {
+    margin-bottom: 0;
+  }
 
-     .menu_toggle {
-          display: none;
-     }
+  .menu_toggle {
+    display: none;
+  }
 
-     .menu_links {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 1.5rem;
-          flex-direction: row;
-     }
+  .menu_links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-direction: row;
+  }
 
-     .header_info {
-          padding: 2rem;
-     }
+  .header_info {
+    padding: 2rem;
+  }
 }
