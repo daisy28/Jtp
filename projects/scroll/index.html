@@ -7,24 +7,49 @@
      <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <header class="header">
+     <header class="header" id="home">
           <nav class="nav">
-               <div class="logo_div">
-                    <img src="../assets/work.png" alt="">
+               <div class="nav_div">
+                    <div class="logo_div">
+                         <img src="../assets/work.png" alt="">
+                    </div>
+                    <div class="menu_toggle">
+                         <span></span>
+                         <span></span>
+                         <span></span>
+                    </div>
                </div>
-               <div class="menu_toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-               </div>
-               <!-- <div>
+               <div class="menu_links">
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
-                    <a href="#Services">Services</a>
+                    <a href="#services">Services</a>
                     <a href="#tours">Tours</a>
-               </div> -->
+               </div>
           </nav>
+
+          <div class="header_info">
+               <h1>scroll project</h1>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci aliquid explicabo iure. Nam esse mollitia impedit officia nihil fugit dolorum! Esse magnam quasi sint maxime nulla voluptatum quaerat corporis et?</p>
+               <a href="#tours">explore tours</a>
+          </div>
      </header>
+
+     <main>
+          <section id="about" class="about">
+               <h1>About <span>us</span></h1>
+          </section>
+          <section id="services" class="services">
+               <h1>Our <span>services</span></h1>
+          </section>
+          <section id="tours" class="tours">
+               <h1>Featured <span>tours</span></h1>
+          </section>
+          <a  href="#home" class="top_btn" id="home"><p>&lt;</p><a/>
+     </main>
+
+     <footer class="footer">
+          <div><p>Copyright &copy; Backroads Travel Tours Company <span class="date"></span>. All rights Reserved.</p></div>
+     </footer>
 
 
      <script src="script.js"></script>
