@@ -19,15 +19,17 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  top: -2px;
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  /* height: 400px; */
 }
 
 .nav {
   padding: 1rem;
+  transition-property: height;
+  transition-duration: 3s;
+  transition-delay: 1s;
+  transition-timing-function: linear;
 }
 
 .fixed_nav {
@@ -38,7 +40,6 @@ header {
   top: 0;
   left: 0;
   z-index: 2;
-  /* margin-bottom: 4rem; */
 }
 
 .nav_div {
@@ -81,15 +82,16 @@ header {
   border-radius: 50%;
   transform: rotate(180deg);
   transition: all;
-  transition-duration: 0.8s;
+  transition-duration: 2s;
   transition-delay: 0.2s;
 }
 
 .menu_links {
   display: none;
-  transition: all;
-  transition-duration: 1s;
-  transition-delay: 0.2s;
+  transition-property: height;
+  transition-duration: 3s;
+  transition-delay: 1s;
+  transition-timing-function: linear;
 }
 
 .show_menu_links {
@@ -99,9 +101,10 @@ header {
   justify-content: start;
   gap: 1.2rem;
   padding: 1rem 0.5rem;
-  transition: all;
-  transition-duration: 2s;
-  transition-delay: 0.2s;
+  transition-property: height;
+  transition-duration: 3s;
+  transition-delay: 1s;
+  transition-timing-function: linear;
 }
 
 .menu_links a {
@@ -209,20 +212,32 @@ header {
   right: 30px;
   width: 30px;
   height: 30px;
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* tran */
+  animation: bounce 2s infinite;
+  box-shadow: 0px 0px 4px #dedcdc;
+  z-index: 99;
+}
+
+.show_top_btn:hover {
+     background-color: transparent;
+     border: 2px solid aqua;
+     color: aqua;
+}
+
+.show_top_btn:hover p{
+     color: aqua;
 }
 
 .top_btn p {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #fff;
   transform: rotate(90deg);
   text-align: center;
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.1rem;
 }
 
 .footer {

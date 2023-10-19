@@ -37,15 +37,15 @@ window.addEventListener("scroll", () => {
 scrollLinks.forEach((links) => {
   links.addEventListener("click", (e) => {
     e.preventDefault();
-    const id = e.currentTarget!.getAttribute("href").slice(1);
+    const id = (e.currentTarget as HTMLElement)!.getAttribute("href")!.slice(1);
     const element: HTMLElement = document.getElementById(id)!;
     const fixedNav = navBar.classList.contains("fixed_nav");
     let position = element.offsetTop - navHeight;
     if (!fixedNav) {
-      position -= navHeight + 68;
+      position -= navHeight + 64;
     }
     if (navHeight > 99) {
-      position = position + menuLinkHeight;
+      position += menuLinkHeight;
     }
     window.scrollTo({
       left: 0,
