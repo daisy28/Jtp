@@ -29,18 +29,16 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     const btns = btnDiv.querySelectorAll(".tab_btn");
     updateUI(tabInfos[0]);
-    btns[0].classList.add("active_btn");
+    btns[0].style.background = `#aed1ec90`;
     btns.forEach(btn => {
-        console.log(btn);
         btn.addEventListener("click", () => {
             tabInfos.filter(info => {
                 if (info.id === btn.id) {
                     updateUI(info);
-                    btn.classList.add("active_btn");
-                    console.log(btn);
+                    btn.style.background = `#aed1ec90`;
                 }
                 else {
-                    btn.classList.remove("active_btn");
+                    btn.style.background = `#6188a5b9`;
                 }
             });
         });
