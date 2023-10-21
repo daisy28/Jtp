@@ -43,10 +43,10 @@ window.addEventListener("DOMContentLoaded", () => {
                tabInfos.filter(info => {
                     if (info.id === btn.id) {
                          updateUI(info);
-                         (btn as HTMLElement).style!.background = `#aed1ec90`;
+                         // (btn as HTMLElement).style!.background = `#aed1ec90`;
                     }
                     else {
-                         (btn as HTMLElement).style!.background = `#6188a5b9`;
+                         // (btn as HTMLElement).style!.background = `#6188a5b9`;
                     }
                });
           });
