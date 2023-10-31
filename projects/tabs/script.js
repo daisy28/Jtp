@@ -1,19 +1,19 @@
 "use strict";
 const tabInfos = [
     {
-        id: "0",
+        id: 0,
         img: "../assets/history.jpg",
         heading: "History",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora laudantium velit quod amet voluptatibus corrupti, quaerat nisi labore laborum delectus eius mollitia, cumque, magni illum tenetur doloremque! Consequatur, ex!"
     },
     {
-        id: "1",
+        id: 1,
         img: "../assets/images (1).jpeg",
         heading: "Vision",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora laudantium velit quod amet voluptatibus corrupti, quaerat nisi labore laborum delectus eius mollitia, cumque, magni illum tenetur doloremque! Consequatur, ex!"
     },
     {
-        id: "2",
+        id: 2,
         img: "../assets/images (12).jpeg",
         heading: "Goals",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora laudantium velit quod amet voluptatibus corrupti, quaerat nisi labore laborum delectus eius mollitia, cumque, magni illum tenetur doloremque! Consequatur, ex!"
@@ -29,18 +29,14 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     const btns = btnDiv.querySelectorAll(".tab_btn");
     updateUI(tabInfos[0]);
-    btns[0].style.background = `#aed1ec90`;
+    // btns[0].classList.add("active_btn");
     btns.forEach(btn => {
         btn.addEventListener("click", () => {
+            let id;
             tabInfos.filter(info => {
-                if (info.id === btn.id) {
-                    updateUI(info);
-                    btn.style.background = `#aed1ec90`;
-                }
-                else {
-                    btn.style.background = `#6188a5b9`;
-                }
+                return id += info.id;
             });
+            console.log(id);
         });
     });
 });

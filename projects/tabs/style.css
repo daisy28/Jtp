@@ -61,7 +61,7 @@ main {
 
 }
 
-.btn_div button {
+button {
      width: 100%;
      background: #6188a5b9;
      border: none;
@@ -73,16 +73,16 @@ main {
      text-align: center;
 }
 
-.active_btn {
-     background: #aed1ec90;
-}
-
-.btn_div button:first-child {
+button:first-child {
      border-top-left-radius: 8px;
 }
 
-.btn_div button:last-child {
+button:last-child {
      border-top-right-radius: 8px;
+}
+
+button.active_btn {
+     background-color: #aed1ec90;
 }
 
 .info {

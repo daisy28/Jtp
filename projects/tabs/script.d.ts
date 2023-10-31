@@ -1,11 +1,11 @@
 declare const tabInfos: {
-    id: string;
+    id: number;
     img: string;
     heading: string;
     description: string;
 }[];
 interface tab {
-    id: string;
+    id: number;
     img: string;
     heading: string;
     description: string;
