@@ -12,6 +12,7 @@ const tabInfos = [
     heading: "Vision",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora laudantium velit quod amet voluptatibus corrupti, quaerat nisi labore laborum delectus eius mollitia, cumque, magni illum tenetur doloremque! Consequatur, ex!",
+    // list: "Lorem ipsum dolor"
   },
   {
     id: "2",
@@ -27,6 +28,7 @@ interface tab {
   img: string;
   heading: string;
   description: string;
+  // list: string;
 }
 
 const btnDiv: HTMLElement = document.querySelector(".btn_div")!;
@@ -41,20 +43,18 @@ window.addEventListener("DOMContentLoaded", () => {
   updateUI(tabInfos[0]);
   btns[0].classList.add("active_btn");
   btns.forEach((btn) => {
-    let infoId = ``;
     btn.addEventListener("click", () => {
+      if (btn.id) {
+        btns.forEach(btn => {
+          btn.classList.remove("active_btn");
+        })
+        btn.classList.add("active_btn");
+      }
       tabInfos.filter((info) => {
         if (info.id === btn.id) {
           updateUI(info);
-          infoId = info.id;
         }
       });
-      if (btn.id.includes(infoId) && !btn.classList.contains("active_btn")) {
-        console.log("yes");
-        btn.classList.add("active_btn");
-      } else {
-        btn.classList.remove("active_btn");
-      }
     });
   });
 });
@@ -62,5 +62,8 @@ window.addEventListener("DOMContentLoaded", () => {
 const updateUI = (item: tab) => {
   tabImg.innerHTML = `<img src="${item.img}" alt=${item.heading} id=${item.id}>`;
   tabInfo.innerHTML = `<h3>${item.heading}</h3>
-          <p>${item.description}</p>`;
+  <p>${item.description}</p>
+  
+  `;
+  
 };
