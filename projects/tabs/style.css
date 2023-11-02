@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  list-style: none;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
@@ -109,8 +108,25 @@ button:last-child {
   color: rgb(96, 90, 90);
 }
 
+ul {
+  padding-left: 1rem;
+  margin: 1rem auto;
+}
+
+li {
+  color: #022c4bb9;
+}
+
 @media screen and (min-width: 768px) {
   .tab_div {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    max-width: 980px;
+    margin: auto;
+    padding: 4rem;
   }
 }

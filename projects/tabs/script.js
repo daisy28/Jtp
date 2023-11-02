@@ -11,7 +11,7 @@ const tabInfos = [
         img: "../assets/images (1).jpeg",
         heading: "Vision",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora laudantium velit quod amet voluptatibus corrupti, quaerat nisi labore laborum delectus eius mollitia, cumque, magni illum tenetur doloremque! Consequatur, ex!",
-        // list: "Lorem ipsum dolor"
+        list: "Lorem ipsum dolor",
     },
     {
         id: "2",
@@ -49,7 +49,15 @@ window.addEventListener("DOMContentLoaded", () => {
 const updateUI = (item) => {
     tabImg.innerHTML = `<img src="${item.img}" alt=${item.heading} id=${item.id}>`;
     tabInfo.innerHTML = `<h3>${item.heading}</h3>
-  <p>${item.description}</p>
-  
-  `;
+  <p>${item.description}</p>`;
+    if (item.list) {
+        tabInfo.innerHTML += `<ul>
+  <li>${item.list}</li>
+  <li>${item.list}</li>
+  <li>${item.list}</li>
+  </ul>`;
+    }
+    else {
+        return;
+    }
 };
