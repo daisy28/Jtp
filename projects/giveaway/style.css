@@ -152,4 +152,9 @@ main {
   .giveaway_info {
     margin: auto 0;
   }
+
+  .giveaway_info_time {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 100%;
+  }
 }
