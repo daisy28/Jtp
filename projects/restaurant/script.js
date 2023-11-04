@@ -156,14 +156,13 @@ const menuUI = (menu) => {
       <img src="${item.img} "alt="">
       <div>
         <div class="menu_name">
-              <p class="menu_title">${item.title}</p>
-              <p class="menu_price">${item.price}</p>
+          <p class="menu_title">${item.title}</p>
+          <p class="menu_price">${item.price}</p>
         </div>
         <div class="menu_description">
-              <p>${item.description}</p>
+          <p>${item.description}</p>
         </div>
       </div>
-      
     </div>
     `);
     });
@@ -187,19 +186,26 @@ const displayCategory = () => {
       </div>`;
     });
     const categoryBtn = menuCategoriesContainer.querySelectorAll(".category");
+    categoryBtn[0].classList.add("active");
     categoryBtn.forEach((btns) => {
         btns.addEventListener("click", () => {
             let filteredCategory = [];
             menus.forEach((menu) => {
                 if (btns.id === menu.category) {
+                    categoryBtn.forEach(btn => {
+                        btn.classList.remove("active");
+                    });
+                    btns.classList.add("active");
                     filteredCategory.push(menu);
                     menuUI(filteredCategory);
-                    // btns.style.backgroundColor = `rgba(204, 179, 116, 0.72)`;
                 }
             });
             if (btns.id === "all") {
+                categoryBtn.forEach(btn => {
+                    btn.classList.remove("active");
+                });
+                btns.classList.add("active");
                 menuUI(menus);
-                // btns.style.backgroundColor = `rgba(204, 179, 116, 0.72)`;
             }
         });
     });

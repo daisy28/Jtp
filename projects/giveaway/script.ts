@@ -35,18 +35,20 @@ giveawayInfo.innerHTML = `giveaway ends on ${
   weekdays[futureDate.getDay()]
 }, ${futureDate.getDate()} ${
   months[futureDate.getMonth()]
-} ${futureDate.getFullYear()} ${futureDate.getHours()}:${futureDate.getMinutes()} <span>pm</span>`;
+} ${futureDate.getFullYear()} ${futureDate.getHours()}:${futureDate.getMinutes()}<span>pm</span>`;
 
 const countDown = () => {
   const currentDate = new Date();
   const timeDifference = futureDate.getTime() - currentDate.getTime();
-  const oneDay = 1000 * 60 * 60 * 24;
-  const oneHour = 1000 * 60 * 60;
-  const oneMin = 1000 * 60;
+  //calculate and get time in milliseconds
+  const oneSec = 1000;
+  const oneMin = oneSec * 60;
+  const oneHour = oneMin * 60;
+  const oneDay = oneHour * 24;
   const days = Math.floor(timeDifference / oneDay);
   const hours = Math.floor((timeDifference % oneDay) / oneHour);
   const minutes = Math.floor((timeDifference % oneHour) / oneMin);
-  let seconds = Math.floor((timeDifference % oneMin) / 1000);
+  let seconds = Math.floor((timeDifference % oneMin) / oneSec);
 
   const timeFormat = (item: number | string) => {
     if (typeof item === "number" && item < 10) {

@@ -57,8 +57,6 @@
 }
 
 .exit:hover {
-     border: 2px solid #e7d1d1;
-     border-radius: 40%;
      font-size: 1.4rem;
      display: flex;
      justify-content: center;
@@ -78,7 +76,7 @@
      display: none;
 }
 
-.show_links .links{
+.show_links .links {
      display: flex;
      flex-direction: column;
      transition: all;
@@ -98,10 +96,14 @@ main {
           display: none;
      }
 
-     .links{
+     .links {
           display: flex;
           justify-content: center;
           gap: 1.3rem;
           width: 100%;
      }
+
+     .show_links .links {
+          flex-direction: row;
+}
 }
