@@ -46,6 +46,7 @@ form.addEventListener("submit", (e) => {
         article.innerHTML = `<p>${texts[random]}</p>`;
     }
     else {
+        article.innerHTML = ``;
         let tempText = texts.map(text => {
             return text;
         });

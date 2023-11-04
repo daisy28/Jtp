@@ -54,6 +54,7 @@ form.addEventListener("submit", (e) => {
      if (isNaN(inputValue) || inputValue <= 0 || inputValue > 10) {
           article.innerHTML = `<p>${texts[random]}</p>`;
      } else {
+          article.innerHTML = ``
           let tempText = texts.map(text => {
                return text
           });
