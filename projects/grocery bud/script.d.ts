@@ -6,6 +6,8 @@ declare const formInput: HTMLInputElement;
 declare const addBtn: HTMLInputElement;
 declare const groceryContainer: HTMLInputElement;
 declare let editValue: boolean;
+declare const addItem: () => void;
+declare let savedItems: string[];
 declare const showList: () => void;
 declare const clearBtn: Element | null;
 declare const alertMessage: (text: string, status: string) => void;
