@@ -66,7 +66,7 @@ form {
      color: #33333343;
 }
 
-.submit_btn {
+.add_btn {
      background-color: rgb(117, 208, 208);
      padding: .65rem 1rem;
      border: none;
@@ -81,7 +81,7 @@ form {
      outline: none;
 }
 
-.submit_btn:focus {
+.add_btn:focus {
      outline: none;
 }
 
