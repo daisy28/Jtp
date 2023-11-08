@@ -41,8 +41,8 @@ const showList = () => {
                     <li>${item}</li>
                </ul>
                <div class="grocery_btns">
-                    <div class="edit">+</div>
-                    <div class="delete">-</div>
+                    <div class="edit btn">+</div>
+                    <div class="delete btn">-</div>
                </div>
           </div>`;
      });
@@ -71,3 +71,11 @@ const alertMessage = (text: string, status: string) => {
           inputAlert.classList.remove(status);
      }, 1000);
 }
+
+groceryContainer.addEventListener("click", e => {
+     e.stopImmediatePropagation();
+     if (e.target.classList.contains("edit")) {
+          editValue = true;
+          console.log(e.target.classList)
+     }
+});
