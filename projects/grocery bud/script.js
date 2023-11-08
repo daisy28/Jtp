@@ -7,7 +7,7 @@ const formInput = document.querySelector(".form_input");
 const addBtn = document.querySelector(".add_btn");
 const groceryContainer = document.querySelector(".grocery_list_container");
 let editValue = false;
-let clearItems = false;
+// let clearItems = false;
 groceryForm.addEventListener("submit", e => {
     e.preventDefault();
     addItem();
@@ -29,11 +29,8 @@ const addItem = () => {
     }
     formInput.value = ``;
 };
-const getType = localStorage.getItem("items");
-const savedItems = JSON.parse(getType);
-if (savedItems) {
-    groceryList = savedItems;
-}
+const savedItems = JSON.parse(localStorage.getItem("items"));
+savedItems ? groceryList = savedItems : "";
 const showList = () => {
     let html = ``;
     groceryList.map(item => {
@@ -49,20 +46,17 @@ const showList = () => {
           </div>`;
     });
     groceryContainer.innerHTML = html;
+    groceryDiv.querySelector(".clear_btn")?.classList.add("show_clear_btn");
 };
 if (groceryList) {
     showList();
 }
-if (groceryList) {
-    groceryDiv.querySelector(".clear_btn")?.classList.add("show_clear_btn");
-}
-// console.log(savedItems)
 const clearBtn = groceryDiv.querySelector(".clear_btn");
 clearBtn?.addEventListener("click", () => {
     localStorage.clear();
     groceryList = [];
     showList();
-    // console.log("cleared")
+    groceryDiv.querySelector(".clear_btn")?.classList.remove("show_clear_btn");
 });
 const alertMessage = (text, status) => {
     inputAlert.innerHTML = `${text}`;
