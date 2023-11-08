@@ -8,7 +8,6 @@ const groceryContainer: HTMLInputElement = document.querySelector(".grocery_list
 let editValue = false;
 let clearItems = false;
 
-
 groceryForm.addEventListener("submit", e => {
      e.preventDefault();
      addItem();
@@ -30,9 +29,12 @@ const addItem = () => {
      formInput.value = ``;
 }
 
-const savedItems: string[] = JSON.parse(localStorage.getItem("items"));
-groceryList = savedItems;
+const getType: string = localStorage.getItem("items")!;
+const savedItems: string[] = JSON.parse(getType);
 
+if (savedItems) {
+     groceryList = savedItems;
+}
 
 const showList = () => {
      let html = ``;
@@ -52,8 +54,10 @@ const showList = () => {
 };
 
 if (groceryList) {
-     showList()
+     showList();
 }
+
+
 
 if (groceryList) {
      groceryDiv.querySelector(".clear_btn")?.classList.add("show_clear_btn");

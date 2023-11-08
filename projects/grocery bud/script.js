@@ -29,8 +29,11 @@ const addItem = () => {
     }
     formInput.value = ``;
 };
-const savedItems = JSON.parse(localStorage.getItem("items"));
-groceryList = savedItems;
+const getType = localStorage.getItem("items");
+const savedItems = JSON.parse(getType);
+if (savedItems) {
+    groceryList = savedItems;
+}
 const showList = () => {
     let html = ``;
     groceryList.map(item => {
