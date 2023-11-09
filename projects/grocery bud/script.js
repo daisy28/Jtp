@@ -34,7 +34,7 @@ const addItem = () => {
 };
 // console.log(groceryList)
 // localStorage.clear()
-const savedItems = JSON.parse(localStorage.getItem("items"));
+let savedItems = JSON.parse(localStorage.getItem("items"));
 savedItems ? groceryList = savedItems : "";
 const showList = () => {
     let html = ``;
@@ -77,11 +77,18 @@ groceryContainer.addEventListener("click", e => {
     const item = e.target;
     const id = item.parentElement.parentElement.id;
     if (id && item.classList.contains("delete")) {
-        console.log(groceryList);
         let ret = groceryList.filter(item => {
             return `${item.idCount}` !== id;
         });
         groceryList = ret;
+        savedItems = groceryList;
+        localStorage.setItem("items", JSON.stringify(savedItems));
         showList();
+        if (groceryList.length < 1 && savedItems.length < 1) {
+            groceryDiv.querySelector(".clear_btn")?.classList.remove("show_clear_btn");
+        }
+    }
+    else if (id && item.classList.contains("edit")) {
+        console.log("edit");
     }
 });

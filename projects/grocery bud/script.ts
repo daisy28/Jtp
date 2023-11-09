@@ -38,7 +38,7 @@ const addItem = () => {
 // console.log(groceryList)
 // localStorage.clear()
 
-const savedItems: List[] = JSON.parse(localStorage.getItem("items")!);
+let savedItems: List[] = JSON.parse(localStorage.getItem("items")!);
 savedItems ? groceryList = savedItems : "";
 
 const showList = () => {
@@ -85,13 +85,19 @@ const alertMessage = (text: string, status: string) => {
 groceryContainer.addEventListener("click", e => {
      e.stopImmediatePropagation();
      const item = e.target;
-     const id = item.parentElement.parentElement.id
+     const id = item.parentElement.parentElement.id;
      if (id && item.classList.contains("delete")) {
-          console.log(groceryList)
           let ret = groceryList.filter(item => {
                return `${item.idCount}` !== id
           });
           groceryList = ret;
+          savedItems = groceryList;
+          localStorage.setItem("items", JSON.stringify(savedItems));
           showList()
+          if (groceryList.length < 1 && savedItems.length < 1) {
+               groceryDiv.querySelector(".clear_btn")?.classList.remove("show_clear_btn");
+          }
+     } else if (id && item.classList.contains("edit")) {
+          console.log("edit")
      }
 });

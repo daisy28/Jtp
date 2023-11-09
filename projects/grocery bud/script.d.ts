@@ -12,7 +12,7 @@ interface List {
     idCount: number;
 }
 declare const addItem: () => void;
-declare const savedItems: List[];
+declare let savedItems: List[];
 declare const showList: () => void;
 declare const clearBtn: Element | null;
 declare const alertMessage: (text: string, status: string) => void;
