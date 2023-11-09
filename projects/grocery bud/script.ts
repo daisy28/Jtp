@@ -82,15 +82,16 @@ const alertMessage = (text: string, status: string) => {
      }, 1000);
 }
 
-// groceryContainer.addEventListener("click", e => {
-//      e.stopImmediatePropagation();
-//      const item = e.target
-//      if (item.classList.contains("delete")) {
-//           groceryList.filter(item => {
-//                console.log(item === e.target)
-//           })
-//           // console.log(localStorage.key(1));
-//           showList();
-//           console.log(e.target.classList);
-//      }
-// });
+groceryContainer.addEventListener("click", e => {
+     e.stopImmediatePropagation();
+     const item = e.target;
+     const id = item.parentElement.parentElement.id
+     if (id && item.classList.contains("delete")) {
+          console.log(groceryList)
+          let ret = groceryList.filter(item => {
+               return `${item.idCount}` !== id
+          });
+          groceryList = ret;
+          showList()
+     }
+});

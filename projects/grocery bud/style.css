@@ -136,3 +136,7 @@ form {
 .show_clear_btn {
      display: block;
 }
+
+.delete_item {
+     display: none;
+}
