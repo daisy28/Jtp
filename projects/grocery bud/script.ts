@@ -1,4 +1,4 @@
-let groceryList: string[] = [];
+let groceryList: List[] = [];
 const groceryDiv: HTMLElement = document.querySelector(".grocery_div")!;
 const inputAlert: HTMLElement = document.querySelector(".alert")!;
 const groceryForm: HTMLElement = document.querySelector("#form")!;
@@ -6,7 +6,11 @@ const formInput: HTMLInputElement = document.querySelector(".form_input")!;
 const addBtn: HTMLInputElement = document.querySelector(".add_btn")!;
 const groceryContainer: HTMLInputElement = document.querySelector(".grocery_list_container")!;
 let editValue = false;
-// let clearItems = false;
+let idCount = 0;
+interface List {
+     value: string,
+     idCount: number
+};
 
 groceryForm.addEventListener("submit", e => {
      e.preventDefault();
@@ -15,8 +19,10 @@ groceryForm.addEventListener("submit", e => {
 
 const addItem = () => {
      const value = formInput.value;
+     const obj = {value, idCount}
      if (value && !editValue) {
-          groceryList.push(value);
+          idCount++
+          groceryList.push(obj);
           localStorage.setItem("items", JSON.stringify(groceryList));
           showList();
           alertMessage("item added successfully!", "alert_success");
@@ -29,16 +35,20 @@ const addItem = () => {
      formInput.value = ``;
 }
 
-const savedItems: string[] = JSON.parse(localStorage.getItem("items")!);
+// console.log(groceryList)
+// localStorage.clear()
+
+const savedItems: List[] = JSON.parse(localStorage.getItem("items")!);
 savedItems ? groceryList = savedItems : "";
 
 const showList = () => {
      let html = ``;
-          groceryList.map(item => {
+     groceryList.map(item => {
+               // console.log(item)
           html += `
-          <div class="grocery_list">
+          <div class="grocery_list" id=${item.idCount}>
                <ul>
-                    <li>${item}</li>
+                    <li>${item.value}</li>
                </ul>
                <div class="grocery_btns">
                     <div class="edit btn">+</div>
@@ -50,7 +60,7 @@ const showList = () => {
      groceryDiv.querySelector(".clear_btn")?.classList.add("show_clear_btn");
 };
 
-if (groceryList) {
+if (groceryList.length > 0) {
      showList();
 }
 
@@ -72,10 +82,15 @@ const alertMessage = (text: string, status: string) => {
      }, 1000);
 }
 
-groceryContainer.addEventListener("click", e => {
-     e.stopImmediatePropagation();
-     if (e.target.classList.contains("edit")) {
-          editValue = true;
-          console.log(e.target.classList)
-     }
-});
+// groceryContainer.addEventListener("click", e => {
+//      e.stopImmediatePropagation();
+//      const item = e.target
+//      if (item.classList.contains("delete")) {
+//           groceryList.filter(item => {
+//                console.log(item === e.target)
+//           })
+//           // console.log(localStorage.key(1));
+//           showList();
+//           console.log(e.target.classList);
+//      }
+// });
