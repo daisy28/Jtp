@@ -8,32 +8,38 @@ const addBtn = document.querySelector(".add_btn");
 const groceryContainer = document.querySelector(".grocery_list_container");
 let editValue = false;
 let idCount = 0;
+let itemId = "";
 ;
-groceryForm.addEventListener("submit", e => {
+const addItem = (e) => {
     e.preventDefault();
-    addItem();
-});
-const addItem = () => {
     const value = formInput.value;
-    const obj = { value, idCount };
+    const listObj = { value, idCount };
     if (value && !editValue) {
         idCount++;
-        groceryList.push(obj);
+        groceryList.push(listObj);
         localStorage.setItem("items", JSON.stringify(groceryList));
         showList();
-        alertMessage("item added successfully!", "alert_success");
+        alertMessage(`${value} added!`, "alert_success");
     }
     else if (value && editValue) {
-        formInput.focus();
-        addBtn.textContent = `edit`;
+        const children = Array.from(e.target.parentElement.querySelector(".grocery_list_container").children);
+        const editedItem = children.filter(item => {
+            if (item.id === itemId) {
+                return item;
+            }
+        });
+        editedItem.map(item => {
+            item.querySelector("ul").innerHTML = `<li>${value} </li>`;
+            addBtn.textContent = `add`;
+            editValue = false;
+        });
     }
     else {
         alertMessage("add an item!", "alert_error");
     }
     formInput.value = ``;
 };
-// console.log(groceryList)
-// localStorage.clear()
+groceryForm.addEventListener("submit", addItem);
 let savedItems = JSON.parse(localStorage.getItem("items"));
 savedItems ? groceryList = savedItems : "";
 const showList = () => {
@@ -45,7 +51,7 @@ const showList = () => {
                <ul>
                     <li>${item.value}</li>
                </ul>
-               <div class="grocery_btns">
+               <div class="grocery_btns" id=${item.idCount}>
                     <div class="edit btn">+</div>
                     <div class="delete btn">-</div>
                </div>
@@ -89,6 +95,9 @@ groceryContainer.addEventListener("click", e => {
         }
     }
     else if (id && item.classList.contains("edit")) {
-        console.log("edit");
+        editValue = true;
+        addBtn.innerHTML = "edit";
+        formInput.focus();
+        itemId = item.parentElement.parentElement.id;
     }
 });

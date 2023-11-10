@@ -7,11 +7,12 @@ declare const addBtn: HTMLInputElement;
 declare const groceryContainer: HTMLInputElement;
 declare let editValue: boolean;
 declare let idCount: number;
+declare let itemId: string;
 interface List {
     value: string;
     idCount: number;
 }
-declare const addItem: () => void;
+declare const addItem: (e: any) => void;
 declare let savedItems: List[];
 declare const showList: () => void;
 declare const clearBtn: Element | null;
