@@ -5,6 +5,7 @@ declare const groceryForm: HTMLElement;
 declare const formInput: HTMLInputElement;
 declare const addBtn: HTMLInputElement;
 declare const groceryContainer: HTMLInputElement;
+declare const dialog: HTMLInputElement;
 declare let editValue: boolean;
 declare let idCount: number;
 declare let itemId: string;

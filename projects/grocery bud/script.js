@@ -6,6 +6,7 @@ const groceryForm = document.querySelector("#form");
 const formInput = document.querySelector(".form_input");
 const addBtn = document.querySelector(".add_btn");
 const groceryContainer = document.querySelector(".grocery_list_container");
+const dialog = document.querySelector(".dialog_wrapper");
 let editValue = false;
 let idCount = 0;
 let itemId = "";
@@ -25,11 +26,17 @@ const addItem = (e) => {
         const children = Array.from(e.target.parentElement.querySelector(".grocery_list_container").children);
         const editedItem = children.filter(item => {
             if (item.id === itemId) {
-                return item;
+                // console.log([groceryList[item.id]])
+                return [groceryList[item.id]];
+                // return item;
             }
         });
         editedItem.map(item => {
             item.querySelector("ul").innerHTML = `<li>${value} </li>`;
+            groceryList[item.id].value = value;
+            savedItems = groceryList;
+            localStorage.setItem("items", JSON.stringify(savedItems));
+            alertMessage(`list editted successfully!`, "alert_success");
             addBtn.textContent = `add`;
             editValue = false;
         });
@@ -52,8 +59,8 @@ const showList = () => {
                     <li>${item.value}</li>
                </ul>
                <div class="grocery_btns" id=${item.idCount}>
-                    <div class="edit btn">+</div>
-                    <div class="delete btn">-</div>
+                    <div class="edit"><img src="../assets/pen.png" alt="edit button" class="edit_btn"></div>
+                    <div class="delete"><img src="../assets/bin.jpg" alt="delete button" class="delete_btn"></div>
                </div>
           </div>`;
     });
@@ -65,10 +72,22 @@ if (groceryList.length > 0) {
 }
 const clearBtn = groceryDiv.querySelector(".clear_btn");
 clearBtn?.addEventListener("click", () => {
-    localStorage.clear();
-    groceryList = [];
-    showList();
-    groceryDiv.querySelector(".clear_btn")?.classList.remove("show_clear_btn");
+    dialog.classList.add("show_dialog");
+    const confirmBtn = dialog.querySelectorAll("button");
+    confirmBtn.forEach(btn => {
+        btn.addEventListener("click", () => {
+            if (btn.classList.contains("back_btn")) {
+                dialog.classList.remove("show_dialog");
+            }
+            else {
+                localStorage.clear();
+                groceryList = [];
+                showList();
+                groceryDiv.querySelector(".clear_btn")?.classList.remove("show_clear_btn");
+                dialog.classList.remove("show_dialog");
+            }
+        });
+    });
 });
 const alertMessage = (text, status) => {
     inputAlert.innerHTML = `${text}`;
@@ -82,7 +101,7 @@ groceryContainer.addEventListener("click", e => {
     e.stopImmediatePropagation();
     const item = e.target;
     const id = item.parentElement.parentElement.id;
-    if (id && item.classList.contains("delete")) {
+    if (id && item.classList.contains("delete_btn")) {
         let ret = groceryList.filter(item => {
             return `${item.idCount}` !== id;
         });
@@ -94,7 +113,7 @@ groceryContainer.addEventListener("click", e => {
             groceryDiv.querySelector(".clear_btn")?.classList.remove("show_clear_btn");
         }
     }
-    else if (id && item.classList.contains("edit")) {
+    else if (id && item.classList.contains("edit_btn")) {
         editValue = true;
         addBtn.innerHTML = "edit";
         formInput.focus();
