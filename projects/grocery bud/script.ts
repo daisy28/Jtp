@@ -31,6 +31,7 @@ const addItem = (e) => {
                     listIndex = index;
                     return groceryList[listIndex];
                }
+               return;
           });
           editedItem.map(item => {
                (item as HTMLElement).querySelector("ul")!.innerHTML = `<li>${value}</li>`;
@@ -105,10 +106,10 @@ const alertMessage = (text: string, status: string) => {
 groceryContainer.addEventListener("click", e => {
      e.stopImmediatePropagation();
      const item = e.target;
-     const id = (item as EventTarget).parentElement.parentElement.id;
+     const id = (item as HTMLElement).parentElement?.parentElement;
      if (id && (item as HTMLElement).classList.contains("delete_btn")) {
           let ret = groceryList.filter(item => {
-               return `${item.idCount}` !== id
+               return `${item.idCount}` !== id.id;
           });
           groceryList = ret;
           savedItems = groceryList;
@@ -121,6 +122,6 @@ groceryContainer.addEventListener("click", e => {
           editValue = true;
           addBtn.innerHTML = "edit";
           formInput.focus();
-          itemId = (item as EventTarget).parentElement.parentElement!.id;
+          itemId = (item as HTMLElement).parentElement?.parentElement?.id!;
      }
 });

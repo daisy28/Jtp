@@ -29,6 +29,7 @@ const addItem = (e) => {
                 listIndex = index;
                 return groceryList[listIndex];
             }
+            return;
         });
         editedItem.map(item => {
             item.querySelector("ul").innerHTML = `<li>${value}</li>`;
@@ -98,10 +99,10 @@ const alertMessage = (text, status) => {
 groceryContainer.addEventListener("click", e => {
     e.stopImmediatePropagation();
     const item = e.target;
-    const id = item.parentElement.parentElement.id;
+    const id = item.parentElement?.parentElement;
     if (id && item.classList.contains("delete_btn")) {
         let ret = groceryList.filter(item => {
-            return `${item.idCount}` !== id;
+            return `${item.idCount}` !== id.id;
         });
         groceryList = ret;
         savedItems = groceryList;
@@ -115,6 +116,6 @@ groceryContainer.addEventListener("click", e => {
         editValue = true;
         addBtn.innerHTML = "edit";
         formInput.focus();
-        itemId = item.parentElement.parentElement.id;
+        itemId = item.parentElement?.parentElement?.id;
     }
 });
