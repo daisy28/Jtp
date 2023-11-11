@@ -7,7 +7,6 @@ const addBtn: HTMLInputElement = document.querySelector(".add_btn")!;
 const groceryContainer: HTMLInputElement = document.querySelector(".grocery_list_container")!;
 const dialog: HTMLInputElement = document.querySelector(".dialog_wrapper")!;
 let editValue = false;
-let idCount = 0;
 let itemId = "";
 interface List {
      value: string,
@@ -17,25 +16,25 @@ interface List {
 const addItem = (e) => {
      e.preventDefault();
      const value = formInput.value;
-     const listObj = { value, idCount };
+     let idCount = new Date().getTime();
      if (value && !editValue) {
-          idCount++;
+          const listObj = { value, idCount };
           groceryList.push(listObj);
           localStorage.setItem("items", JSON.stringify(groceryList));
           showList();
           alertMessage(`${value} added!`, "alert_success");
      } else if (value && editValue) {
+          let listIndex = 0;
           const children = Array.from(e.target.parentElement.querySelector(".grocery_list_container").children);
-          const editedItem = children.filter(item => {
-               if (item.id === itemId) {
-                    // console.log([groceryList[item.id]])
-                    return [groceryList[item.id]]
-                    // return item;
+          const editedItem = children.filter((item, index) => {
+               if ((item as HTMLElement).id === itemId) {
+                    listIndex = index;
+                    return groceryList[listIndex];
                }
           });
           editedItem.map(item => {
-               item.querySelector("ul").innerHTML = `<li>${value} </li>`;
-               groceryList[item.id].value = value
+               (item as HTMLElement).querySelector("ul")!.innerHTML = `<li>${value}</li>`;
+               groceryList[listIndex].value = value;
                savedItems = groceryList;
                localStorage.setItem("items", JSON.stringify(savedItems));
                alertMessage(`list editted successfully!`, "alert_success");
@@ -47,9 +46,7 @@ const addItem = (e) => {
      }
      formInput.value = ``;
 }
-
 groceryForm.addEventListener("submit", addItem);
-
 
 let savedItems: List[] = JSON.parse(localStorage.getItem("items")!);
 savedItems ? groceryList = savedItems : "";
@@ -57,7 +54,6 @@ savedItems ? groceryList = savedItems : "";
 const showList = () => {
      let html = ``;
      groceryList.map(item => {
-               // console.log(item)
           html += `
           <div class="grocery_list" id=${item.idCount}>
                <ul>
@@ -109,8 +105,8 @@ const alertMessage = (text: string, status: string) => {
 groceryContainer.addEventListener("click", e => {
      e.stopImmediatePropagation();
      const item = e.target;
-     const id = item.parentElement.parentElement.id;
-     if (id && item.classList.contains("delete_btn")) {
+     const id = (item as EventTarget).parentElement.parentElement.id;
+     if (id && (item as HTMLElement).classList.contains("delete_btn")) {
           let ret = groceryList.filter(item => {
                return `${item.idCount}` !== id
           });
@@ -121,10 +117,10 @@ groceryContainer.addEventListener("click", e => {
           if (groceryList.length < 1 && savedItems.length < 1) {
                groceryDiv.querySelector(".clear_btn")?.classList.remove("show_clear_btn");
           }
-     } else if (id && item.classList.contains("edit_btn")) {
+     } else if (id && (item as HTMLElement).classList.contains("edit_btn")) {
           editValue = true;
           addBtn.innerHTML = "edit";
           formInput.focus();
-          itemId = item.parentElement.parentElement.id;
+          itemId = (item as EventTarget).parentElement.parentElement!.id;
      }
 });

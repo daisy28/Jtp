@@ -7,7 +7,6 @@ declare const addBtn: HTMLInputElement;
 declare const groceryContainer: HTMLInputElement;
 declare const dialog: HTMLInputElement;
 declare let editValue: boolean;
-declare let idCount: number;
 declare let itemId: string;
 interface List {
     value: string;

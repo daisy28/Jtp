@@ -166,7 +166,7 @@ form {
 .dialog {
      background-color: rgb(205, 113, 113);
      padding: 1.5rem;
-     width: 90%;
+     max-width: 500px;
      display: flex;
      flex-direction: column;
      gap: 1.2rem;
@@ -174,8 +174,9 @@ form {
 }
 
 .dialog img {
-     width: 60%;
-     height: 60%;
+     width: 200px;
+     height: 200px;
+     object-fit: cover;
      margin: auto;
 }
 

@@ -8,32 +8,31 @@ const addBtn = document.querySelector(".add_btn");
 const groceryContainer = document.querySelector(".grocery_list_container");
 const dialog = document.querySelector(".dialog_wrapper");
 let editValue = false;
-let idCount = 0;
 let itemId = "";
 ;
 const addItem = (e) => {
     e.preventDefault();
     const value = formInput.value;
-    const listObj = { value, idCount };
+    let idCount = new Date().getTime();
     if (value && !editValue) {
-        idCount++;
+        const listObj = { value, idCount };
         groceryList.push(listObj);
         localStorage.setItem("items", JSON.stringify(groceryList));
         showList();
         alertMessage(`${value} added!`, "alert_success");
     }
     else if (value && editValue) {
+        let listIndex = 0;
         const children = Array.from(e.target.parentElement.querySelector(".grocery_list_container").children);
-        const editedItem = children.filter(item => {
+        const editedItem = children.filter((item, index) => {
             if (item.id === itemId) {
-                // console.log([groceryList[item.id]])
-                return [groceryList[item.id]];
-                // return item;
+                listIndex = index;
+                return groceryList[listIndex];
             }
         });
         editedItem.map(item => {
-            item.querySelector("ul").innerHTML = `<li>${value} </li>`;
-            groceryList[item.id].value = value;
+            item.querySelector("ul").innerHTML = `<li>${value}</li>`;
+            groceryList[listIndex].value = value;
             savedItems = groceryList;
             localStorage.setItem("items", JSON.stringify(savedItems));
             alertMessage(`list editted successfully!`, "alert_success");
@@ -52,7 +51,6 @@ savedItems ? groceryList = savedItems : "";
 const showList = () => {
     let html = ``;
     groceryList.map(item => {
-        // console.log(item)
         html += `
           <div class="grocery_list" id=${item.idCount}>
                <ul>
