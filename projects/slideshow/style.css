@@ -13,4 +13,73 @@ body {
      flex-direction: column;
      align-items: center;
      margin-top: 3rem;
+     background-color: rgba(0, 128, 128, 0.073);
+}
+
+.content h1 {
+     text-align: center;
+     color: teal;
+     font-size: 1.3rem;
+     text-transform: capitalize;
+     letter-spacing: 3px;
+     line-height: 28px;
+     margin-bottom: 2rem;
+}
+
+.slides img {
+     width: 100%;
+     margin-bottom: 1rem;
+}
+
+.slides h2 {
+     font-size: 1.2rem;
+     line-height: 28px;
+     letter-spacing: 2px;
+     color: darkred;
+     text-transform: uppercase;
+     margin-bottom: 1rem;
+}
+
+.slides h4 {
+     font-size: .8rem;
+     line-height: 28px;
+     letter-spacing: 2px;
+     color: rgba(139, 0, 0, 0.746);
+     text-transform: uppercase;
+     margin-bottom: 1rem;
+}
+
+.slides p {
+     font-size: 1rem;
+     line-height: 28px;
+     letter-spacing: 1px;
+     color: rgba(52, 5, 5, 0.932);
+     text-transform: uppercase;
+}
+
+.btn_div {
+     width: 80%;
+     margin: 1.5rem auto;
+     display: flex;
+     justify-content: center;
+     gap: 1rem;
+}
+
+.btn_div button {
+     padding: .5rem 1rem;
+     font-size: .8rem;
+     letter-spacing: 2px;
+     color: white;
+     border: none;
+     border-radius: 4px;
+     box-shadow: 0px 0px 5px #333;
+     cursor: pointer;
+}
+
+.next_btn {
+     background-color: teal;
+}
+
+.prev_btn {
+     background-color: darkred;
 }

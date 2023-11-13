@@ -35,3 +35,21 @@ const usersData = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam molestias neque voluptate laudantium repellendus velit, minima harum mollitia sint veniam nam cupiditate tenetur qui, optio quae quam inventore, nulla beatae!",
   },
 ];
+
+const slideContainer: HTMLElement = document.querySelector(".slides_container")!;
+let slideCounter = 0
+
+const showSlides = () => {
+  let html = `<div class="slides">
+    <img src=${usersData[slideCounter].img} alt=${usersData[slideCounter].name} >
+    <h2>${usersData[slideCounter].name}</h2>
+    <h4>${usersData[slideCounter].occupation}</h4>
+    <p>${usersData[slideCounter].testimonial}</p>
+</div>`;
+  slideContainer.innerHTML = html;
+}
+
+window.addEventListener("DOMContentLoaded",showSlides);
+
+
+
