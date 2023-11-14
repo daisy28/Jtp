@@ -63,6 +63,12 @@ form {
      width: 100%;
 }
 
+.form_input:focus {
+     background-color: azure;
+     transition: all 1s ease-in-out;
+     border-color: rgb(117, 208, 208);
+}
+
 .form_input::placeholder{
      color: #33333343;
 }
@@ -80,10 +86,12 @@ form {
      border-top-right-radius: 4px;
      border-bottom-right-radius: 4px;
      outline: none;
+     transition: all 1s ease-in-out;
 }
 
-.add_btn:focus {
-     outline: none;
+.add_btn:hover {
+     background-color: rgb(6, 153, 153);
+     transition: all 1s ease-in-out;
 }
 
 .grocery_list_container {
@@ -99,7 +107,7 @@ form {
 }
 
 .grocery_list ul {
-     padding-left: .8rem;
+     padding-left: 1rem;
      text-transform: capitalize;
      color: #757070;
      font-size: 1.2rem;
@@ -116,19 +124,30 @@ form {
 .grocery_btns div {
      cursor: pointer;
      position: relative;
-     /* z-index: 20; */
 }
 
 .grocery_btns img {
      width: 40px;
      height: 40px;
      position: relative;
-     /* z-index: 10; */
 }
 
 .grocery_btns .edit_btn {
      width: 20px;
      height: 20px;
+}
+
+.grocery_btns .edit_btn:hover {
+     transform: rotate(-45deg);
+     transition: all 1s ease-in-out;
+}
+
+.grocery_btns .delete_btn:hover {
+     transform: scaleX(-1);
+     transition: all .5s ease-in-out;
+     /* animation: alternate;
+     animation-play-state: running;
+     animation-iteration-count: infinite; */
 }
 
 .clear_btn {
@@ -139,6 +158,11 @@ form {
      cursor: pointer;
      text-transform: capitalize;
      display: none;
+}
+
+.clear_btn:hover {
+     background-color: rgb(167, 9, 40);
+     color: antiquewhite;
 }
 
 .show_clear_btn {
@@ -216,6 +240,19 @@ form {
 .confirm_btn button:first-child {
      background-color: rgb(62, 148, 148);
 }
+
+.confirm_btn button:first-child:hover {
+     background-color: rgb(46, 116, 116);
+     color: antiquewhite;
+     transition: all 1s ease-in-out;
+}
+
 .confirm_btn button:last-child {
      background-color: crimson;
+}
+
+.confirm_btn button:last-child:hover {
+     background-color: rgb(167, 9, 40);
+     color: antiquewhite;
+     transition: all 1s ease-in-out;
 }

@@ -38,7 +38,7 @@ const addItem = (e) => {
                groceryList[listIndex].value = value;
                savedItems = groceryList;
                localStorage.setItem("items", JSON.stringify(savedItems));
-               alertMessage(`list editted successfully!`, "alert_success");
+               alertMessage(`list edited successfully!`, "alert_success");
                addBtn.textContent = `add`;
                editValue = false;
           });
