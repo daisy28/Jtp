@@ -125,11 +125,27 @@ body {
 
 .next_btn {
      background-color: teal;
+     border: 2px solid teal;
+}
+
+.next_btn:hover {
+     background-color: transparent;
+     border: 1px solid teal;
+     color: teal;
+     transition: all 1s ease-in-out;
 }
 
 .prev_btn {
      background-color: darkred;
+     border: 2px solid darkred;
      display: none;
+}
+
+.prev_btn:hover {
+     background-color: #fff;
+     border: 1px solid darkred;
+     color: darkred;
+     transition: all 1s ease-in-out;
 }
 
 .hide_next_btn {

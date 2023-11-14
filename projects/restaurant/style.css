@@ -46,12 +46,9 @@ body {
 }
 
 .category:hover {
-  background-color: rgba(204, 179, 116, 0.72);
-  transition: all;
-  transition-timing-function: ease-in-out;
-  transition-delay: .1s;
-  transition-duration: .5s;
-  color: goldenrod;
+  background-color: rgba(204, 179, 116, 0.326);
+  transition: all 1s ease-in-out;
+  color: #320202;
 }
 
 .active {

@@ -78,6 +78,11 @@
   border: none;
 }
 
+.video_toggle:hover {
+  background-color: rgb(136, 193, 242);
+  transition: all 1s ease-in-out;
+}
+
 span {
   width: 40px;
   color: rgb(6, 83, 150);
@@ -92,14 +97,10 @@ span {
   width: 50%;
   height: 100%;
   border-radius: 8px;
-  transition: all;
-  transition-delay: .5s;
-  transition-duration: .5s;
+  transition: all .2s ease-in-out;
 }
 
 .slide {
   left: 50%;
-  transition: all;
-  transition-delay: .5s;
-  transition-duration: .5s;
+  transition: all .2s ease-in-out;
 }

@@ -52,14 +52,14 @@ form.addEventListener("submit", (e) => {
      const inputValue = Number(input.value);
      const random = Math.floor(Math.random() * texts.length);
      if (isNaN(inputValue) || inputValue <= 0 || inputValue > 10) {
-          article.innerHTML = `<p>${texts[random]}</p>`;
+          article.innerHTML = `<p class="text">${texts[random]}</p>`;
      } else {
           article.innerHTML = ``
           let tempText = texts.map(text => {
                return text
           });
           tempText.slice(0, inputValue).map(item => {
-               return article.innerHTML += `<p>${item}</p>`
+               return article.innerHTML += `<p class="text">${item}</p>`
           });
      }
      input.value = "";

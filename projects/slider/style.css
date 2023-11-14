@@ -38,16 +38,10 @@ body {
   height: 260px;
   margin: 0.5rem auto;
   object-fit: cover;
-  transition: all;
-  transition-duration: 1s;
-  transition-delay: .4s;
 }
 
 .content {
   padding: 1rem;
-  transition: all;
-  transition-duration: 1s;
-  transition-delay: .4s;
 }
 
 .name,
@@ -80,13 +74,26 @@ body {
 
 .previous_btn,
 .next_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: crimson;
+  width: 20px;
+  height: 20px;
   font-weight: 900;
-  font-size: 1.4rem;
-  border: none;
+  font-size: .5rem;
+  border: 1px solid #fff;
   outline: none;
   background-color: transparent;
   cursor: pointer;
+  padding: .2rem;
+  border-radius: 50%;
+}
+
+.previous_btn:hover,
+.next_btn:hover {
+  background-color: #fff;
+  transition: all 1s ease-in-out;
 }
 
 .random_btn_div {
@@ -106,6 +113,12 @@ body {
   letter-spacing: 2px;
   font-size: 0.6rem;
   color: #e1dcdc;
+  outline: none;
+}
+
+.random_btn:hover {
+  background: goldenrod;
+  transition: all 1s ease-in-out;
 }
 
 @media screen and (min-width:768px) {

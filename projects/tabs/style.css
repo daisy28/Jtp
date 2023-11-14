@@ -70,6 +70,14 @@ button {
   outline: none;
   cursor: pointer;
   text-align: center;
+  border: 1px solid transparent;
+}
+
+button:hover {
+  background-color: #8ca9bfb9;
+  border: 1px solid #6188a5b9;
+  transition: all 1s ease-in-out;
+  color: #fff;
 }
 
 button:first-child {

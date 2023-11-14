@@ -88,10 +88,7 @@ header {
 
 .menu_links {
   display: none;
-  transition-property: height;
-  transition-duration: 3s;
-  transition-delay: 1s;
-  transition-timing-function: linear;
+  transition: all 1s ease-in-out;
 }
 
 .show_menu_links {
@@ -101,10 +98,7 @@ header {
   justify-content: start;
   gap: 1.2rem;
   padding: 1rem 0.5rem;
-  transition-property: height;
-  transition-duration: 3s;
-  transition-delay: 1s;
-  transition-timing-function: linear;
+  transition: all 3s ease-in-out;
 }
 
 .menu_links a {
@@ -123,9 +117,7 @@ header {
 
 .menu_links a:hover {
   color: aqua;
-  transition: all;
-  transition-duration: 0.5s;
-  transition-delay: 0.2s;
+  transition: all 1s ease-in-out
 }
 
 .header_info {
