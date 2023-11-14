@@ -8,6 +8,23 @@
 
 body {
      background-color: rgb(232, 202, 163);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+
+.info {
+     
+     margin-bottom: 2rem;
+}
+
+.info h1 {
+     text-align: center;
+     text-transform: capitalize;
+     letter-spacing: 2px;
+     line-height: 32px;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .counter-div {
@@ -64,8 +81,18 @@ body {
      background-color: rgba(3, 117, 70, 0.972);
 }
 
+#btn_increment:hover {
+     background-color: rgba(2, 70, 42, 0.969);
+     transition: all 1s ease-in-out;
+}
+
 #btn_decrement {
      background-color: rgba(133, 21, 21, 0.881);
+}
+
+#btn_decrement:hover {
+     background-color: rgba(86, 11, 11, 0.944);
+     transition: all 1s ease-in-out;
 }
 
 #btn_reset {
@@ -74,9 +101,23 @@ body {
      color: goldenrod;
 }
 
+#btn_reset:hover {
+     background-color: goldenrod;
+     border: 1px solid goldenrod;
+     color: white;
+     transition: all 1s ease-in-out;
+}
+
 #btn_save {
      background-color: transparent;
      border: 1px solid rgb(8, 50, 112);
      color: rgb(8, 50, 112);
+}
+
+#btn_save:hover {
+     background-color: rgb(8, 50, 112);
+     border: 1px solid rgb(8, 50, 112);
+     color: #fff;
+     transition: all 1s ease-in-out;
 }
 
