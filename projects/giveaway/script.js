@@ -25,12 +25,13 @@ const weekdays = [
 const giveawayInfo = document.querySelector(".giveaway_info_text h4");
 const countdown = document.querySelectorAll(".countdown p");
 const expiryInfo = document.querySelector(".giveaway_container p");
-const futureDate = new Date(2023, 10, 23, 12, 30, 0, 0);
+const futureDate = new Date(2023, 10, 30, 12, 30, 0, 0);
 giveawayInfo.innerHTML = `giveaway ends on ${weekdays[futureDate.getDay()]}, ${futureDate.getDate()} ${months[futureDate.getMonth()]} ${futureDate.getFullYear()} ${futureDate.getHours()}:${futureDate.getMinutes()}<span>pm</span>`;
 const countDown = () => {
     const currentDate = new Date();
     const timeDifference = futureDate.getTime() - currentDate.getTime();
     //calculate and get time in milliseconds
+    // one sec = 1000 milliseconds
     const oneSec = 1000;
     const oneMin = oneSec * 60;
     const oneHour = oneMin * 60;

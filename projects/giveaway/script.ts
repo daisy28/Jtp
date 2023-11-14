@@ -26,10 +26,8 @@ const giveawayInfo: HTMLElement = document.querySelector(
 )!;
 const countdown: NodeListOf<Element> =
   document.querySelectorAll(".countdown p")!;
-const expiryInfo: HTMLElement = document.querySelector(
-  ".giveaway_container p"
-)!;
-const futureDate = new Date(2023, 10, 23, 12, 30, 0, 0);
+const expiryInfo: HTMLElement = document.querySelector(".giveaway_container p")!;
+const futureDate = new Date(2023, 10, 30, 12, 30, 0, 0);
 
 giveawayInfo.innerHTML = `giveaway ends on ${
   weekdays[futureDate.getDay()]
@@ -41,6 +39,7 @@ const countDown = () => {
   const currentDate = new Date();
   const timeDifference = futureDate.getTime() - currentDate.getTime();
   //calculate and get time in milliseconds
+  // one sec = 1000 milliseconds
   const oneSec = 1000;
   const oneMin = oneSec * 60;
   const oneHour = oneMin * 60;
