@@ -12,10 +12,6 @@ body {
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: all;
-  transition-duration: 1s;
-  transition-delay: 1s;
-  transition-timing-function: ease-in-out;
 }
 
 main {
@@ -34,10 +30,11 @@ main {
   border: 0.3px solid #b19e6b;
   padding: 1rem;
   border-radius: 8px;
-  margin-bottom: 1rem;
-  transition: all;
+  /* transition: all;
   transition-duration: 3s;
-  transition-delay: 1.5s;
+  transition-delay: 1.5s; */
+  max-width: 500px;
+  margin: 1rem auto;
 }
 
 .question {
@@ -66,35 +63,30 @@ main {
   border-bottom-left-radius: 8px;
 }
 
+.toggle:hover {
+  background-color: #4d4328;
+  transition: all 1s ease-in-out;
+}
+
 .answer {
   border-top: 1px solid #b19e6b;
   padding: 1rem 0;
   font-family: cursive;
-  transition: all;
-  transition-duration: 1s;
-  transition-delay: 1s;
+  transition: all 2s ease-in-out;
   display: none;
   line-height: 28px;
 }
 
 .collapse {
   display: none;
-  transition: all;
-  transition-duration: 2s;
-  transition-delay: 2s;
 }
 
 .show_answer .answer,
 .show_answer .collapse {
   display: block;
-  transition: all;
-  transition-duration: .6s;
-  transition-delay: .4s;
 }
 
 .show_answer .expand {
   display: none;
-  transition: all;
-  transition-duration: 2s;
-  transition-delay: 2s;
+  transition: all 2s ease-in-out;
 }
