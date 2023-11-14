@@ -8,12 +8,24 @@
 body {
   background-color: #333;
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
   height: 100vh;
   transition: all;
   transition-duration: .6s;
   transition-delay: .6s;
+}
+
+.info {
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  line-height: 32px;
+}
+.info h1{
+  margin-bottom: 1.2rem;
 }
 
 .container {
@@ -39,11 +51,15 @@ body {
   margin-bottom: 1rem;
   padding: 1rem;
   text-align: center;
-  cursor: pointer;
   letter-spacing: 2px;
   text-transform: lowercase;
   font-size: 0.8rem;
   transition: all;
   transition-duration: .6s;
   transition-delay: .6s;
+}
+
+.color_btn,
+.hex_btn {
+  cursor: pointer;
 }
