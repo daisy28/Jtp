@@ -24,7 +24,7 @@ counterBtn.forEach((btns) => {
             totalCount.style.color = `black`;
             saveCount.style.color = `black`;
             counter.innerHTML = `${count}`;
-            totalCount.innerHTML = `Total: ${total}`;
+            totalCount.innerHTML = `Total: `;
             saveCount.textContent = `Save: `;
         }
         else {

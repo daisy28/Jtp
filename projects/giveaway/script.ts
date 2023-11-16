@@ -27,7 +27,11 @@ const giveawayInfo: HTMLElement = document.querySelector(
 const countdown: NodeListOf<Element> =
   document.querySelectorAll(".countdown p")!;
 const expiryInfo: HTMLElement = document.querySelector(".giveaway_container p")!;
-const futureDate = new Date(2023, 10, 30, 12, 30, 0, 0);
+const tempDate = new Date();
+const tempYear = tempDate.getFullYear();
+const tempMonth = tempDate.getMonth();
+const tempdate = tempDate.getDate() + 15;
+const futureDate = new Date(tempYear, tempMonth, tempdate, 12, 30, 0, 0);
 
 giveawayInfo.innerHTML = `giveaway ends on ${
   weekdays[futureDate.getDay()]
