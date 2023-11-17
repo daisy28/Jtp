@@ -12,9 +12,34 @@ body {
      background-color: azure;
      height: 100vh;
      display: flex;
+     flex-direction: column;
      justify-content: center;
      align-items: center;
      position: relative;
+}
+
+.grocery_info {
+     text-align: center;
+     text-transform: capitalize;
+     line-height: 28px;
+     letter-spacing: 2px;
+}
+
+.grocery_info div {
+     display: flex;
+     align-items: center;
+     gap: .5rem;
+     margin-bottom: 2rem;
+}
+
+.grocery_info h1 {
+     font-size: 1.7rem;
+     color: rgb(117, 208, 208);
+}
+
+.grocery_info p {
+     font-size: 1.1rem;
+     color: rgb(56, 58, 58);
 }
 
 main {
@@ -22,7 +47,7 @@ main {
      background-color: #fff;
      width: 80%;
      max-width: 500px;
-     margin: auto;
+     margin: 3rem auto;
      border-radius: 4px;
      box-shadow: 0px 0px 10px 0px #c0bebe61;
      padding: 1rem;
@@ -104,6 +129,12 @@ form {
      display: flex;
      justify-content: space-between;
      align-items: center;
+}
+
+.grocery_list:hover {
+     background-color: azure;
+     padding: 0rem 1rem;
+     border-radius: 4px;
 }
 
 .grocery_list ul {

@@ -9,6 +9,7 @@ const groceryContainer = document.querySelector(".grocery_list_container");
 const dialog = document.querySelector(".dialog_wrapper");
 let editValue = false;
 let itemId = "";
+let oldItem = "";
 ;
 const addItem = (e) => {
     e.preventDefault();
@@ -19,7 +20,8 @@ const addItem = (e) => {
         groceryList.push(listObj);
         localStorage.setItem("items", JSON.stringify(groceryList));
         showList();
-        alertMessage(`${value} added!`, "alert_success");
+        alertMessage(`${value} added to the list!`, "alert_success");
+        setToDefault();
     }
     else if (value && editValue) {
         let listIndex = 0;
@@ -36,15 +38,15 @@ const addItem = (e) => {
             groceryList[listIndex].value = value;
             savedItems = groceryList;
             localStorage.setItem("items", JSON.stringify(savedItems));
-            alertMessage(`list edited successfully!`, "alert_success");
             addBtn.textContent = `add`;
             editValue = false;
         });
+        alertMessage(`${oldItem} edited!`, "alert_success");
+        setToDefault();
     }
     else {
         alertMessage("add an item!", "alert_error");
     }
-    formInput.value = ``;
 };
 groceryForm.addEventListener("submit", addItem);
 let savedItems = JSON.parse(localStorage.getItem("items"));
@@ -84,10 +86,17 @@ clearBtn?.addEventListener("click", () => {
                 showList();
                 groceryDiv.querySelector(".clear_btn")?.classList.remove("show_clear_btn");
                 dialog.classList.remove("show_dialog");
+                alertMessage(`list cleared!`, "alert_error");
+                setToDefault();
             }
         });
     });
 });
+const setToDefault = () => {
+    formInput.value = ``;
+    addBtn.innerHTML = "add";
+    editValue = false;
+};
 const alertMessage = (text, status) => {
     inputAlert.innerHTML = `${text}`;
     inputAlert.classList.add(status);
@@ -104,6 +113,9 @@ groceryContainer.addEventListener("click", e => {
         let ret = groceryList.filter(item => {
             return `${item.idCount}` !== id.id;
         });
+        groceryList.filter(item => {
+            `${item.idCount}` === id.id ? alertMessage(`${item.value} deleted!`, `alert_error`) : ``;
+        });
         groceryList = ret;
         savedItems = groceryList;
         localStorage.setItem("items", JSON.stringify(savedItems));
@@ -111,10 +123,13 @@ groceryContainer.addEventListener("click", e => {
         if (groceryList.length < 1 && savedItems.length < 1) {
             groceryDiv.querySelector(".clear_btn")?.classList.remove("show_clear_btn");
         }
+        setToDefault();
     }
     else if (id && item.classList.contains("edit_btn")) {
         editValue = true;
         addBtn.innerHTML = "edit";
+        oldItem = item.parentElement?.parentElement?.parentElement?.querySelector("li").textContent;
+        formInput.value = oldItem;
         formInput.focus();
         itemId = item.parentElement?.parentElement?.id;
     }
