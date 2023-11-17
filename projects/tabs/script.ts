@@ -8,7 +8,7 @@ const tabInfos = [
   },
   {
     id: "1",
-    img: "../assets/images (1).jpeg",
+    img: "../assets/images__3_-removebg-preview.png",
     heading: "Vision",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora laudantium velit quod amet voluptatibus corrupti, quaerat nisi labore laborum delectus eius mollitia, cumque, magni illum tenetur doloremque! Consequatur, ex!",

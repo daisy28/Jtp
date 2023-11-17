@@ -10,7 +10,7 @@
 body {
      padding: 1rem;
      background-color: azure;
-     height: 100vh;
+     /* height: 100vh; */
      display: flex;
      flex-direction: column;
      justify-content: center;
@@ -22,14 +22,15 @@ body {
      text-align: center;
      text-transform: capitalize;
      line-height: 28px;
-     letter-spacing: 2px;
+     letter-spacing: 1px;
+     margin-top: 8rem;
 }
 
 .grocery_info div {
      display: flex;
      align-items: center;
-     gap: .5rem;
-     margin-bottom: 2rem;
+     flex-direction: column;
+     margin-bottom: 1.5rem;
 }
 
 .grocery_info h1 {
@@ -40,6 +41,7 @@ body {
 .grocery_info p {
      font-size: 1.1rem;
      color: rgb(56, 58, 58);
+     letter-spacing: 2px;
 }
 
 main {
@@ -133,8 +135,9 @@ form {
 
 .grocery_list:hover {
      background-color: azure;
-     padding: 0rem 1rem;
+     padding: 0rem .1rem;
      border-radius: 4px;
+     transition: all .5s ease-in-out;
 }
 
 .grocery_list ul {
@@ -150,6 +153,7 @@ form {
 .grocery_btns {
      display: flex;
      align-items: center;
+     gap: .3rem;
 }
 
 .grocery_btns div {
@@ -158,27 +162,25 @@ form {
 }
 
 .grocery_btns img {
-     width: 40px;
-     height: 40px;
+     width: 20px;
+     height: 20px;
+     object-fit: cover;
      position: relative;
 }
 
 .grocery_btns .edit_btn {
-     width: 20px;
-     height: 20px;
+     width: 15px;
+     height: 15px;
 }
 
 .grocery_btns .edit_btn:hover {
      transform: rotate(-45deg);
-     transition: all 1s ease-in-out;
+     transition: all .5s ease-in-out;
 }
 
 .grocery_btns .delete_btn:hover {
      transform: scaleX(-1);
      transition: all .5s ease-in-out;
-     /* animation: alternate;
-     animation-play-state: running;
-     animation-iteration-count: infinite; */
 }
 
 .clear_btn {

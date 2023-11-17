@@ -20,10 +20,12 @@ body {
   text-align: center;
   text-transform: capitalize;
   letter-spacing: 2px;
-  line-height: 32px;
+  line-height: 28px;
 }
-.info h1{
+
+.info h1 {
   margin-bottom: 1.2rem;
+  line-height: 48px;
 }
 
 .container {

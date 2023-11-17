@@ -60,8 +60,8 @@ const showList = () => {
                     <li>${item.value}</li>
                </ul>
                <div class="grocery_btns" id=${item.idCount}>
-                    <div class="edit"><img src="../assets/pen.png" alt="edit button" class="edit_btn"></div>
-                    <div class="delete"><img src="../assets/bin.jpg" alt="delete button" class="delete_btn"></div>
+                    <div class="edit"><img src="../assets/fountain-pen-icon-png.png" alt="edit button" class="edit_btn"></div>
+                    <div class="delete"><img src="../assets/images__1_-removebg-preview.png" alt="delete button" class="delete_btn"></div>
                </div>
           </div>`;
     });

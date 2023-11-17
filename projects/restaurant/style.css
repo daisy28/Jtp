@@ -67,7 +67,9 @@ img {
   height: 300px;
   border: 2px solid goldenrod;
   object-fit: cover;
-  border-radius: 8px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .menu_name {

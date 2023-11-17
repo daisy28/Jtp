@@ -197,8 +197,14 @@ header {
   display: none;
 }
 
+.top_btn img {
+  width: 15px;
+  height: 15px;
+  transform: rotate(-95deg);
+}
+
 .show_top_btn {
-  background-color: aqua;
+  background-color: rgb(3, 147, 147);
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -208,28 +214,13 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: bounce 2s infinite;
-  box-shadow: 0px 0px 4px #dedcdc;
+  box-shadow: 0px 0px 4px rgb(3, 147, 147);
   z-index: 99;
 }
 
 .show_top_btn:hover {
      background-color: transparent;
-     border: 2px solid aqua;
-     color: aqua;
-}
-
-.show_top_btn:hover p{
-     color: aqua;
-}
-
-.top_btn p {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #fff;
-  transform: rotate(90deg);
-  text-align: center;
-  padding-bottom: 0.1rem;
+     border: 2px solid rgb(3, 147, 147);
 }
 
 .footer {
