@@ -6,3 +6,41 @@
      text-decoration: none;
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+body {
+     background-color: rgb(183, 193, 222);
+     /* padding: 1rem; */
+}
+
+.title {
+     font-size: 1.3rem;
+     font-weight: 600;
+     letter-spacing: 2px;
+     line-height: 42px;
+     margin-bottom: 1rem;
+     text-transform: capitalize;
+     text-align: center;
+     color: rgb(3, 3, 40);
+     padding: 2rem 1rem;
+}
+
+.quiz_result {
+     padding: 2rem 0;
+     background-color: rgb(225, 233, 239);
+     padding: 2rem;
+     text-align: center;
+
+}
+
+.quiz_result p {
+     text-transform: capitalize;
+     font-size: 1.2rem;
+     font-weight: 500;
+     letter-spacing: 2px;
+     line-height: 32px;
+}
+
+.form_div {
+     padding: 3rem 1rem;
+     background-color: rgb(87, 87, 165);
+}
