@@ -16,7 +16,7 @@ interface List {
 
 const addItem = (e) => {
      e.preventDefault();
-     const value = formInput.value;
+     const value = formInput.value.trim();
      let idCount = new Date().getTime();
      if (value && !editValue) {
           const listObj = { value, idCount };
