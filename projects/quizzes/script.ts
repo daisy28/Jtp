@@ -76,6 +76,17 @@ quizForm.addEventListener("submit", (e) => {
      e.preventDefault();
 });
 
+getQuestions();
+
+const inputDiv = quizForm.querySelectorAll("input");
+const ans = inputDiv.forEach(input => {
+     return `${input.value}`;
+});
+console.log(ans)
+quizForm.addEventListener("submit", (e) => {
+     e.preventDefault();
+});
+
 
 
 
