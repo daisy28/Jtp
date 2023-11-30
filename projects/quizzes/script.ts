@@ -2,34 +2,36 @@ const quizForm: HTMLElement = document.querySelector(".quiz_form")!;
 let answers: string[] = [];
 
 type Question = {
-     category: string,
-     correctAnswer: string,
-     difficulty: string,
-     incorrectAnswers: string[],
-     question: QuestionText,
-     id: string
-}
+  category: string;
+  correctAnswer: string;
+  difficulty: string;
+  incorrectAnswers: string[];
+  question: QuestionText;
+  id: string;
+};
 
 type QuestionText = {
-     text: string
-}
+  text: string;
+};
 
 const getQuestions = () => {
-     fetch("https://the-trivia-api.com/v2/questions").then(data => {
-          return data.json();
-     }).then(data => {
-          console.log(data)
-          displayQuestions(data);
-          data.map((item: Question) => {
-               answers.push(item.correctAnswer)
-          })
-     });
-}
+  fetch("https://the-trivia-api.com/v2/questions")
+    .then((data) => {
+      return data.json();
+    })
+    .then((data) => {
+      console.log(data);
+      displayQuestions(data);
+      data.map((item: Question) => {
+        answers.push(item.correctAnswer);
+      });
+    });
+};
 
 const displayQuestions = (questions: Question[]) => {
-     let html = ``;
-     questions.map(question => {
-          html += `
+  let html = ``;
+  questions.map((question) => {
+    html += `
      <div class="question_div">
                               <p class="question">${question.question.text}</p>
 
@@ -59,36 +61,19 @@ const displayQuestions = (questions: Question[]) => {
                               
                               
                          </div>
-     `
-     });
-     quizForm.innerHTML = html;
-     quizForm.innerHTML += `<button type="submit" class="quiz_btn">submit</button>`
-}
+     `;
+  });
+  quizForm.innerHTML = html;
+  quizForm.innerHTML += `<button type="submit" class="quiz_btn">submit</button>`;
+};
 
 getQuestions();
 
 const inputDiv = quizForm.querySelectorAll("input");
-const ans = inputDiv.forEach(input => {
-     return `${input.value}`;
+const ans = inputDiv.forEach((input) => {
+  return `${input.value}`;
 });
-console.log(ans)
+console.log(ans);
 quizForm.addEventListener("submit", (e) => {
-     e.preventDefault();
+  e.preventDefault();
 });
-
-getQuestions();
-
-const inputDiv = quizForm.querySelectorAll("input");
-const ans = inputDiv.forEach(input => {
-     return `${input.value}`;
-});
-console.log(ans)
-quizForm.addEventListener("submit", (e) => {
-     e.preventDefault();
-});
-
-
-
-
-
-
