@@ -2,9 +2,11 @@
 const quizForm = document.querySelector(".quiz_form");
 let answers = [];
 const getQuestions = () => {
-    fetch("https://the-trivia-api.com/v2/questions").then(data => {
+    fetch("https://the-trivia-api.com/v2/questions")
+        .then((data) => {
         return data.json();
-    }).then(data => {
+    })
+        .then((data) => {
         console.log(data);
         displayQuestions(data);
         data.map((item) => {
@@ -14,7 +16,7 @@ const getQuestions = () => {
 };
 const displayQuestions = (questions) => {
     let html = ``;
-    questions.map(question => {
+    questions.map((question) => {
         html += `
      <div class="question_div">
                               <p class="question">${question.question.text}</p>
@@ -52,7 +54,7 @@ const displayQuestions = (questions) => {
 };
 getQuestions();
 const inputDiv = quizForm.querySelectorAll("input");
-const ans = inputDiv.forEach(input => {
+const ans = inputDiv.forEach((input) => {
     return `${input.value}`;
 });
 console.log(ans);

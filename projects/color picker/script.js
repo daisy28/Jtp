@@ -39,3 +39,4 @@ btns.forEach((btn) => {
         }
     });
 });
+console.log(getRandomColors());
