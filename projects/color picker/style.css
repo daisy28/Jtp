@@ -40,6 +40,13 @@ body {
   flex-direction: column;
 }
 
+.container h1 {
+  color: #060606;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: .5rem auto ;
+}
+
 .color_name,
 .color_btn,
 .hex_btn {
