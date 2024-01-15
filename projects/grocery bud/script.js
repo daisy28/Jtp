@@ -52,6 +52,8 @@ const addItem = (e) => {
 groceryForm.addEventListener("submit", addItem);
 let savedItems = JSON.parse(localStorage.getItem("items"));
 savedItems ? groceryList = savedItems : "";
+console.log(savedItems);
+console.log(groceryList);
 const showList = () => {
     let html = ``;
     groceryList.map(item => {
@@ -61,8 +63,9 @@ const showList = () => {
                     <li>${item.value}</li>
                </ul>
                <div class="grocery_btns" id=${item.idCount}>
-                    <div class="edit"><img src="../assets/fountain-pen-icon-png.png" alt="edit button" class="edit_btn"></div>
-                    <div class="delete"><img src="../assets/images__1_-removebg-preview.png" alt="delete button" class="delete_btn"></div>
+                    <button class="edit"><img src="../assets/fountain-pen-icon-png.png" alt="edit button" class="edit_btn"></button>
+          
+                    <button class="delete"><img src="../assets/images__1_-removebg-preview.png" alt="delete button" class="delete_btn"></button>
                </div>
           </div>`;
     });

@@ -156,10 +156,13 @@ form {
      gap: .3rem;
 }
 
-.grocery_btns div {
+.grocery_btns button {
      cursor: pointer;
      position: relative;
+     border: none;
+     background-color: transparent;
 }
+
 
 .grocery_btns img {
      width: 20px;
@@ -191,6 +194,10 @@ form {
      cursor: pointer;
      text-transform: capitalize;
      display: none;
+     border: none;
+     width: 100%;
+     font-size: 1.3rem;
+     background-color: transparent;
 }
 
 .clear_btn:hover {
@@ -288,4 +295,9 @@ form {
      background-color: rgb(167, 9, 40);
      color: antiquewhite;
      transition: all 1s ease-in-out;
+}
+
+button:focus {
+     outline: 2px solid rgb(14, 102, 224);
+     border-radius: 4px;
 }
