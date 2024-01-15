@@ -18,6 +18,7 @@ const addItem = (e) => {
      e.preventDefault();
      const value = formInput.value.trim();
      let idCount = new Date().getTime();
+     console.log(idCount)
      if (value && !editValue) {
           const listObj = { value, idCount };
           groceryList.push(listObj);

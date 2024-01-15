@@ -33,6 +33,7 @@ const tempMonth = tempDate.getMonth();
 const tempdate = tempDate.getDate() + 15;
 const futureDate = new Date(tempYear, tempMonth, tempdate, 12, 30, 0, 0);
 
+
 giveawayInfo.innerHTML = `giveaway ends on ${
   weekdays[futureDate.getDay()]
 }, ${futureDate.getDate()} ${
