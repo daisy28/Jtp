@@ -209,12 +209,11 @@ const displayCategory = () => {
       }
       return value;
     },["all"]);
-    
   categories.map((category) => {
     menuCategoriesContainer.innerHTML += `
-      <div class="category" id=${category}>
+      <button class="category" id=${category}>
       ${category}
-      </div>`;
+      </button>`;
   });
   const categoryBtn = menuCategoriesContainer.querySelectorAll(".category");
   categoryBtn[0].classList.add("active");

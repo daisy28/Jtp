@@ -67,6 +67,18 @@ header {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+button:focus,
+a:focus {
+  outline: 2px solid rgb(28, 28, 205);
+  border-radius: 4px;
 }
 
 .menu_toggle span {

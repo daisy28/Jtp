@@ -36,22 +36,30 @@ const usersData = [
         occupation: "Software Developer",
         testimonial: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam molestias neque voluptate laudantium repellendus velit, minima harum mollitia sint veniam nam cupiditate tenetur qui, optio quae quam inventore, nulla beatae!",
     },
+    {
+        img: "../assets/man3.jpg",
+        name: "John Doe",
+        occupation: "Data Engineer",
+        testimonial: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam molestias neque voluptate laudantium repellendus velit, minima harum mollitia sint veniam nam cupiditate tenetur qui, optio quae quam inventore, nulla beatae!",
+    },
 ];
 const slideContainer = document.querySelector(".slides_container");
 const slideNumber = document.querySelector(".slide_number");
 const slideShowButtons = document.querySelectorAll(".btn_div button");
 let slideCounter = 0;
 const showSlides = () => {
+    const data = usersData[slideCounter];
     let html = `<div class="slides">
-    <img src=${usersData[slideCounter].img} alt=${usersData[slideCounter].name} >
-    <h2>${usersData[slideCounter].name}</h2>
-    <h4>${usersData[slideCounter].occupation}</h4>
-    <p>${usersData[slideCounter].testimonial}</p>
+    <img src=${data.img} alt=${data.name} >
+    <h2>${data.name}</h2>
+    <h4>${data.occupation}</h4>
+    <p>${data.testimonial}</p>
 </div>`;
     slideContainer.innerHTML = html;
 };
 usersData.map((data, index) => {
     slideNumber.innerHTML += `<div class="number">${index + 1}</div>`;
+    console.log(data);
 });
 const numberList = slideNumber.querySelectorAll(".number");
 numberList[slideCounter].classList.add("active_number");

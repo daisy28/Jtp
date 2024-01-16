@@ -15,7 +15,6 @@ const addItem = (e) => {
     e.preventDefault();
     const value = formInput.value.trim();
     let idCount = new Date().getTime();
-    console.log(idCount);
     if (value && !editValue) {
         const listObj = { value, idCount };
         groceryList.push(listObj);
@@ -27,6 +26,7 @@ const addItem = (e) => {
     else if (value && editValue) {
         let listIndex = 0;
         const children = Array.from(e.target.parentElement.querySelector(".grocery_list_container").children);
+        console.log(children);
         const editedItem = children.filter((item, index) => {
             if (item.id === itemId) {
                 listIndex = index;
@@ -52,8 +52,6 @@ const addItem = (e) => {
 groceryForm.addEventListener("submit", addItem);
 let savedItems = JSON.parse(localStorage.getItem("items"));
 savedItems ? groceryList = savedItems : "";
-console.log(savedItems);
-console.log(groceryList);
 const showList = () => {
     let html = ``;
     groceryList.map(item => {
@@ -109,6 +107,7 @@ const alertMessage = (text, status) => {
         inputAlert.classList.remove(status);
     }, 1000);
 };
+console.log(groceryContainer);
 groceryContainer.addEventListener("click", e => {
     e.stopImmediatePropagation();
     const item = e.target;

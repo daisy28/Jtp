@@ -27,7 +27,7 @@ window.addEventListener("scroll", () => {
     topBtn.classList.remove("show_top_btn");
   }
 
-  if (scrollY > 50) {
+  if (scrollY > 40) {
     navBar.classList.add("fixed_nav");
   } else {
     navBar.classList.remove("fixed_nav");
