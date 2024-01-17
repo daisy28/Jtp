@@ -7,7 +7,6 @@ window.addEventListener("load", () => {
   preloader.classList.add("hide_preloader");
 });
 
-
 videoToggle.addEventListener("click", () => {
   if (!videoToggleSlide.classList.contains("slide")) {
     videoToggleSlide.classList.add("slide");

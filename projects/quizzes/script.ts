@@ -31,36 +31,41 @@ const getQuestions = () => {
 const displayQuestions = (questions: Question[]) => {
   let html = ``;
   questions.map((question) => {
+
+    const answers: string[] = [];
+    question.incorrectAnswers.map(incorrectAnswer => answers.push(incorrectAnswer));
+    answers.push(question.correctAnswer);
+    
     html += `
      <div class="question_div">
-                              <p class="question">${question.question.text}</p>
+      <p class="question">${question.question.text}</p>
 
-                              <div class="answer_input_div">
-                              <div class="answer_input">
-                                   <input type="radio" name="answer" id="firstAnswer"
-                                   value=${question.incorrectAnswers[1]}>
-                                   <label for="firstAnswer">${question.incorrectAnswers[1]}</label>
-                              </div>
-                              <div class="answer_input">
-                                   <input type="radio" name="answer" id="secondAnswer"
-                                   value=${question.incorrectAnswers[0]}>
-                                   <label for="secondAnswer">${question.incorrectAnswers[0]}</label>
-                              </div>
-                              <div class="answer_input">
-                                   <input type="radio" name="answer" id="thirdAnswer"
-                                   value=${question.correctAnswer}>
-                                   <label for="thirdAnswer">${question.correctAnswer}</label>
-                              </div>
-                              <div class="answer_input">
-                                   <input type="radio" name="answer" id="fourthAnswer"
-                                   value=${question.incorrectAnswers[2]}>
-                                   <label for="fourthAnswer">${question.incorrectAnswers[2]}</label>
-                              </div>
-                              </div>
-                              
-                              
-                              
-                         </div>
+      <div class="answer_input_div">
+      <div class="answer_input">
+        <input type="radio" name=${question.id} id="firstAnswer"
+        value=${answers[0]}>
+        <label for="firstAnswer">${answers[0]}</label>
+      </div>
+
+      <div class="answer_input">
+        <input type="radio" name=${question.id} id="secondAnswer"
+        value=${answers[1]}>
+        <label for="secondAnswer">${answers[1]}</label>
+      </div>
+
+      <div class="answer_input">
+        <input type="radio" name=${question.id} id="thirdAnswer"
+        value=${answers[2]}>
+        <label for="thirdAnswer">${answers[2]}</label>
+      </div>
+
+      <div class="answer_input">
+        <input type="radio" name=${question.id} id="fourthAnswer"
+        value=${answers[3]}>
+        <label for="fourthAnswer">${answers[3]}</label>
+      </div>
+      </div>
+  </div>
      `;
   });
   quizForm.innerHTML = html;
@@ -68,14 +73,24 @@ const displayQuestions = (questions: Question[]) => {
 };
 
 getQuestions();
-
-const inputDiv = quizForm.querySelectorAll("input");
-const ans = inputDiv.forEach((input) => {
-  return `${input.value}`;
-});
-console.log(ans);
+console.log(answers)
 quizForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  const options = quizForm.querySelectorAll("input");
+  
+  const allOptions = Array.from(options);
+  let score = 0;
+  answers.map(answer => {
+    allOptions.filter(options => {
+      if (answer === options.value) {
+        // console.log(options.value)
+        // console.log(options.checked)
+        // console.log(answer)
+        score += 10;
+      }
+    });
+  });
+  console.log(score)
 });
 
 

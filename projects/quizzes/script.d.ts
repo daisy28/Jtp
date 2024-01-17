@@ -13,5 +13,3 @@ type QuestionText = {
 };
 declare const getQuestions: () => void;
 declare const displayQuestions: (questions: Question[]) => void;
-declare const inputDiv: NodeListOf<HTMLInputElement>;
-declare const ans: void;
