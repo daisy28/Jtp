@@ -1,5 +1,5 @@
 declare const quizForm: HTMLElement;
-declare let answers: string[];
+declare let questions: Question[];
 type Question = {
     category: string;
     correctAnswer: string;
@@ -13,3 +13,4 @@ type QuestionText = {
 };
 declare const getQuestions: () => void;
 declare const displayQuestions: (questions: Question[]) => void;
+declare let score: number;

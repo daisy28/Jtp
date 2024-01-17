@@ -1,6 +1,6 @@
 "use strict";
 const quizForm = document.querySelector(".quiz_form");
-let answers = [];
+let questions = [];
 const getQuestions = () => {
     fetch("https://the-trivia-api.com/v2/questions")
         .then((data) => {
@@ -9,9 +9,7 @@ const getQuestions = () => {
         .then((data) => {
         console.log(data);
         displayQuestions(data);
-        data.map((item) => {
-            answers.push(item.correctAnswer);
-        });
+        data.map(item => questions.push(item));
     });
 };
 const displayQuestions = (questions) => {
@@ -20,6 +18,7 @@ const displayQuestions = (questions) => {
         const answers = [];
         question.incorrectAnswers.map(incorrectAnswer => answers.push(incorrectAnswer));
         answers.push(question.correctAnswer);
+        console.log(question.correctAnswer);
         html += `
      <div class="question_div">
       <p class="question">${question.question.text}</p>
@@ -56,18 +55,14 @@ const displayQuestions = (questions) => {
     quizForm.innerHTML += `<button type="submit" class="quiz_btn">submit</button>`;
 };
 getQuestions();
-console.log(answers);
+let score = 0;
 quizForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const options = quizForm.querySelectorAll("input");
     const allOptions = Array.from(options);
-    let score = 0;
-    answers.map(answer => {
-        allOptions.filter(options => {
-            if (answer === options.value) {
-                // console.log(options.value)
-                // console.log(options.checked)
-                // console.log(answer)
+    questions.map(question => {
+        allOptions.map(options => {
+            if (options.value === question.correctAnswer && options.checked) {
                 score += 10;
             }
         });

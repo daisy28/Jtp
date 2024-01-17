@@ -1,5 +1,5 @@
 const quizForm: HTMLElement = document.querySelector(".quiz_form")!;
-let answers: string[] = [];
+let questions: Question[] = [];
 
 type Question = {
   category: string;
@@ -19,12 +19,10 @@ const getQuestions = () => {
     .then((data) => {
       return data.json();
     })
-    .then((data) => {
+    .then((data: Question[]) => {
       console.log(data);
       displayQuestions(data);
-      data.map((item: Question) => {
-        answers.push(item.correctAnswer);
-      });
+      data.map(item => questions.push(item));
     });
 };
 
@@ -35,6 +33,7 @@ const displayQuestions = (questions: Question[]) => {
     const answers: string[] = [];
     question.incorrectAnswers.map(incorrectAnswer => answers.push(incorrectAnswer));
     answers.push(question.correctAnswer);
+    console.log(question.correctAnswer)
     
     html += `
      <div class="question_div">
@@ -73,23 +72,21 @@ const displayQuestions = (questions: Question[]) => {
 };
 
 getQuestions();
-console.log(answers)
+let score = 0;
+
 quizForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const options = quizForm.querySelectorAll("input");
   
   const allOptions = Array.from(options);
-  let score = 0;
-  answers.map(answer => {
-    allOptions.filter(options => {
-      if (answer === options.value) {
-        // console.log(options.value)
-        // console.log(options.checked)
-        // console.log(answer)
+  questions.map(question => {
+    allOptions.map(options => {
+      if (options.value === question.correctAnswer && options.checked) {
         score += 10;
       }
     });
   });
+  
   console.log(score)
 });
 
