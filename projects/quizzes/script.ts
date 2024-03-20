@@ -74,21 +74,36 @@ const displayQuestions = (questions: Question[]) => {
 getQuestions();
 let score = 0;
 
-quizForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const options = quizForm.querySelectorAll("input");
+// quizForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const options = quizForm.querySelectorAll("input");
   
-  const allOptions = Array.from(options);
-  questions.map(question => {
-    allOptions.map(options => {
-      if (options.value === question.correctAnswer && options.checked) {
-        score += 10;
-      }
-    });
-  });
+//   const allOptions = Array.from(options);
+//   questions.map(question => {
+//     allOptions.map(options => {
+//       if (options.value === question.correctAnswer && options.checked) {
+//         score += 10;
+//       }
+//     });
+//   });
   
-  console.log(score)
-});
+//   console.log(score)
+// });
+// quizForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const options = quizForm.querySelectorAll("input");
+  
+//   const allOptions = Array.from(options);
+//   questions.map(question => {
+//     allOptions.map(options => {
+//       if (options.value === question.correctAnswer && options.checked) {
+//         score += 10;
+//       }
+//     });
+//   });
+  
+//   console.log(score)
+// });
 
 
 
